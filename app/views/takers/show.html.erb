@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Survey:</strong>
+  <%= @taker.survey_id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @taker.email %>
+</p>
+
+<%= link_to 'Edit', edit_taker_path(@taker) %> |
+<%= link_to 'Back', takers_path %>

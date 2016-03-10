@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :takers
+  resources :questions
+  resources :surveys
+  resources :authors
   get 'adele/index'
   root 'adele#index'
   # The priority is based upon order of creation: first created -> highest priority.
