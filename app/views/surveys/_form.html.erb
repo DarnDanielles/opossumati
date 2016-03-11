@@ -23,6 +23,18 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <h3>Questions</h3>
+
+  <%= f.fields_for :questions do |ff| %>
+    <div>
+      <%= ff.number_field :question_order, placeholder: "Question Order" %>
+       <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
+      <%= ff.text_area_tag :question_description, placeholder: "Question Description" %>
+      <%= ff.text_area_tag :question_text, placeholder: "Enter your question" %>
+      <%= ff.check_box :required %>
+    </div>
+    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

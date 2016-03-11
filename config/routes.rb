@@ -2,13 +2,14 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/destroy'
 
+  get 'adele/index'
+  root 'surveys#index'
+
   resources :answers
   resources :takers
   resources :questions
   resources :surveys
   resources :authors
-  get 'adele/index'
-  root 'adele#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
