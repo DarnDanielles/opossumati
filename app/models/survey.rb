@@ -3,4 +3,6 @@ class Survey < ActiveRecord::Base
   has_many :questions
   has_many :answers, through: :questions
   belongs_to :author
+
+  validates :title, presence: true
 end
