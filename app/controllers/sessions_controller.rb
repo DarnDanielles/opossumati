@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
-
+  def new
+  end
 
   def create
     user = Author.find_by_email(params[:email])
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "You have successfully logged in"
     else
       flash.now[:alert] = "Invalid email or password"
-      render "New"
+      render "new"
     end
   end
 

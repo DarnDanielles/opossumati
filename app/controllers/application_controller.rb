@@ -4,9 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def logged_in?
-    if session[:user_id].nil?
-      redirect_to login_path, notice: "Please login first" unless session[:user_id]
-    end
+    redirect_to login_path, notice: "Please login first" unless session[:user_id]
   end
 
 
