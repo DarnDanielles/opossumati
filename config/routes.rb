@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   resources :questions
   resources :surveys
   resources :authors
+
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
+
   get 'adele/index'
   root 'adele#index'
   # The priority is based upon order of creation: first created -> highest priority.
