@@ -1,22 +1,19 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
 
-  get 'sessions/destroy'
+  root 'adele#index'
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   resources :answers
   resources :takers
   resources :questions
   resources :surveys
   resources :authors
-
-  get 'login' => 'sessions#new'
-
-  post 'login' => 'sessions#create'
-
-  delete 'logout' => 'sessions#destroy'
+  resources :sessions, only: [:new, :create, :destroy]
 
   get 'adele/index'
-  root 'adele#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
