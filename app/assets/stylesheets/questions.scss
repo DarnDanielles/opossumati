@@ -1,3 +1,202 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@mixin border() {
+  border:solid red thin;
+}
+
+$width:100%;
+
+//----------------------------------------------MAIN--
+
+.main-section{
+  @include border();
+  display: inline-block;
+  width:$width * 8/12;
+  border-right:solid grey 3px;
+  padding-right:1em;
+  .rabbit-trail{
+    width:100%;
+    display: block;
+    padding:.5em 0;
+    border-bottom:solid grey 3px;
+    margin-bottom: 2em;
+      a{
+        text-decoration: none;
+      }
+      i{
+        margin-left:1em;
+      }
+  }
+
+.main-section-head{
+  padding-bottom:2em;
+  .main-section-head-left{
+    @include border();
+    display: inline-block;
+  h1{
+    font-size:3em;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .edit{
+    border:none;
+    background-color:white;
+    font-weight: 600;
+    font-size:1.25em;
+    color:grey;
+    @include border();
+    // display: inline-block;
+    // vertical-align: bottom;
+    vertical-align: bottom;
+  }
+  .edit-text{
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  }
+  .main-section-head-right{
+    @include border();
+    display: inline-block;
+    vertical-align: bottom;
+    float:right;
+    width:40%;
+    text-align: right;
+    padding-right: 1em;
+
+    .publish{
+      display: inline-block;
+      vertical-align: bottom;
+      width:48%;
+      padding-top: .75em;
+      padding-bottom:.75em;
+      background-color: #93c955;
+      border-radius:3px;
+      color:white;
+      font-weight:600;
+      font-size:1em;
+      border:none
+    }
+    .save{
+      display: inline-block;
+    }
+  }
+  }
+
+
+}
+
+.short-answer{
+  @include border();
+  width:100%;
+  .short-answer-one{
+    @include border();
+    display: inline-block;
+    vertical-align: top;
+    padding-top:.75em;
+    width:3em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+
+  }
+  .short-answer-two{
+    @include border();
+    display: inline-block;
+    vertical-align: bottom;
+    width:80%;
+  h3{
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 300;
+  }
+  span{
+    h2{
+      font-size:1.5em;
+      font-weight: 600;
+      display: inline-block;
+      padding-top:.2em;
+    }
+    input{
+      width:90%;
+      font-size:1.5em;
+      font-style: italic;
+      border:solid grey 1px;
+      border-radius:2px;
+      padding:.25em .5em;
+      padding-left:.4em;
+
+    }
+    }
+    }
+    .delete{
+      float:right;
+      border:none;
+      background-color:white;
+      font-weight: 600;
+      font-size:1.25em;
+      color:red;
+      @include border();
+      .edit-text{
+        display: inline-block;
+      }
+    .buttons{
+      float: right;
+      width:20%;
+      @include border();
+
+    .edit{
+      display: block;
+      width: 100%;
+      border:none;
+      background-color:white;
+      font-weight: 600;
+      font-size:1.25em;
+      @include border();
+      .edit-text{
+        display: inline-block;
+      }
+      }
+      }
+      }
+}
+
+aside{
+  @include border();
+  display: inline-block;
+  width:$width * 6/24;
+  text-align: center;
+  padding-left:3em;
+  vertical-align: top;
+  padding-top:5em;
+  .aside-container{
+    @include border();
+    text-align: left;
+    width:90%;
+    margin:0 auto;
+  h2{
+    font-size:2em;
+    font-weight: 500;
+    padding-bottom:.5em;
+  }
+  button {
+    text-align: left;
+    width:100%;
+    display: block;
+    padding:0 1em;
+    border:solid grey thin;
+    border-radius:2px;
+    margin-bottom:.2em;
+    background-color:white;
+    h3{
+      font-size:1.5em;
+      padding-left:.5em;
+      .fa{
+        margin-right:1em;
+      }
+    }
+  }
+  }
+}
