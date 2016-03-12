@@ -9,7 +9,7 @@ Heroku URL: https://shrouded-hollows-35760.herokuapp.com/
 
 ###Signup
 
-- [ ] New authors can sign up
+- [X] New authors can sign up
 - [ ] Survey Creation
 
 - [ ] Authors have a "my surveys" screen that lists all the surveys they have created
