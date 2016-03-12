@@ -7,7 +7,7 @@ Heroku URL: https://shrouded-hollows-35760.herokuapp.com/
 
 ##Normal Mode
 
-##Signup
+#Signup
 
 * [ ] New authors can sign up
 * [ ] Survey Creation
