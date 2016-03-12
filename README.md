@@ -5,9 +5,9 @@
 Heroku URL: https://shrouded-hollows-35760.herokuapp.com/
 
 
-##Normal Mode
+#Normal Mode
 
-#Signup
+###Signup
 
 * [ ] New authors can sign up
 * [ ] Survey Creation
@@ -35,13 +35,13 @@ There are three types of questions that should be supported:
 * [ ] Questions can be reordered
   This does not have to be a drag/drop implementation; it can be more naive (e.g. a move up / move down button on each question)
 
-#Publishing a survey works as follows:
+###Publishing a survey works as follows:
 
 * [ ] By default, surveys are not published. The author must choose to publish a survey
 * [ ] The survey must have at least one question before it can be published
 * [ ] When published, the author is immediately presented a link that they can send to people to take the survey
 
-#Taking a Survey
+###Taking a Survey
 
 #If a taker has a link to a survey:
 * [ ] The taker can follow the link directly to the survey
@@ -51,12 +51,12 @@ There are three types of questions that should be supported:
 * [ ] Takers cannot submit a survey until the required fields have been filled in
 * [ ] Authors cannot edit a survey after one or more submissions have been made for the survey
 
-#Viewing Results
+###Viewing Results
 
 * [ ] Authors can view all of the answers for any survey they have created
 * [ ] In this view, answers are grouped by question
 
-##Hard Mode
+#Hard Mode
 
 * [ ] Authors can create a fourth question type: dropdown.
 
@@ -67,9 +67,9 @@ There are three types of questions that should be supported:
 * [ ] Takers will see a select field (dropdown) for each dropdown-type question, and the default value shown to takers will be blank
 * [ ] If a dropdown question is required, takers cannot leave the dropdown on the blank option when submitting their answers
 
-##Nightmare Mode
+#Nightmare Mode
 
-#Survey Creation
+###Survey Creation
 
 * [ ] Authors can drag-and-drop questions
 * [ ] Authors can add "Other" as an option to single-select multiple choice questions
@@ -78,19 +78,19 @@ There are three types of questions that should be supported:
 * [ ] Authors can create multi-select multiple choice questions
 * [ ] This is very similar to the Dropdown question type, except when taking the survey, takers can select any number of answers, not just one
 
-#Viewing Results
+###Viewing Results
 
 * [ ] Authors can export the results of their survey (in CSV)
 * [ ] When an author views survey results, he/she should be given the option to view an aggregate report
 * [ ] For yes/no questions and single-choice questions, show each possible answer along with the percentage of people who chose that answer
 * [ ] For textual questions, show the answers in a list
 
-##Apocalypse Mode
+#Apocalypse Mode
 
-#Survey Creation
+###Survey Creation
 
 * [ ] Authors can add questions which only appear to takers if the taker selected a particular answer to an earlier question. In other words, perhaps question 3 only appears if the answer to question 1 was "Donkey." Note that this answer-checking could be done on Yes/No answers, multiple choice answers, or textual answers.
 
-#Viewing Results
+###Viewing Results
 
 * [ ] Graph the answers. That's the only description you get. Make it work, make it awesome, and definitely use JavaScript for the graphs.
