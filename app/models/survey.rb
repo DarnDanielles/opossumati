@@ -5,4 +5,8 @@ class Survey < ActiveRecord::Base
   belongs_to :author
 
   validates :title, presence: true
+
+  accepts_nested_attributes_for :questions,
+      reject_if: :all_blank
+
 end

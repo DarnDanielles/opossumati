@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in?
 
   # GET /surveys
   # GET /surveys.json
@@ -10,22 +11,24 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
+    redirect_to edit_survey_path
   end
 
   # GET /surveys/new
   def new
     @survey = Survey.new
+    @survey.questions.build
   end
 
   # GET /surveys/1/edit
   def edit
+    @survey.questions.build
   end
 
   # POST /surveys
   # POST /surveys.json
   def create
     @survey = Survey.new(survey_params)
-
     respond_to do |format|
       if @survey.save
         format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
@@ -42,7 +45,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
+        format.html { redirect_to edit_survey_path, notice: 'Survey was successfully updated.' }
         format.json { render :show, status: :ok, location: @survey }
       else
         format.html { render :edit }
@@ -69,6 +72,6 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:author_id, :title, :description)
+      params.require(:survey).permit(:author_id, :title, :description, questions_attributes: [:id, :question_order, :question_type, :question_description, :question_text, :required])
     end
 end
