@@ -10,11 +10,8 @@
       </ul>
     </div>
   <% end %>
+  <%= f.hidden_field :author_id %>
 
-  <div class="field">
-    <%= f.label :author_id %><br>
-    <%= f.number_field :author_id %>
-  </div>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -29,13 +26,13 @@
   <%= f.fields_for :questions do |ff| %>
     <div>
       <%= ff.number_field :question_order, placeholder: "Question Order" %>
-       <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
-      <%= ff.text_area_tag :question_description, placeholder: "Question Description" %>
-      <%= ff.text_area_tag :question_text, placeholder: "Enter your question" %>
-      <%= ff.check_box :required %>
+      Question Type <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
+      <%= ff.text_area :description, placeholder: "Question Description" %>
+      <%= ff.text_area :question_text, placeholder: "Enter your question" %>
+      Required Question <%= ff.check_box :required %>
     </div>
     <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "New Question" %>
   </div>
 <% end %>

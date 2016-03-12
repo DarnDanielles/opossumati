@@ -1,7 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  
+
   # GET /surveys
   # GET /surveys.json
   def index
@@ -21,6 +21,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    @survey.questions.build
   end
 
   # POST /surveys
@@ -44,7 +45,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
+        format.html { redirect_to edit_survey_path, notice: 'Survey was successfully updated.' }
         format.json { render :show, status: :ok, location: @survey }
       else
         format.html { render :edit }
