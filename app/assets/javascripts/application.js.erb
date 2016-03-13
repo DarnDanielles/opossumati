@@ -1,0 +1,367 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
+
+
+//
+
+
+  var userController = {
+      id: 2,
+      addUsersForm: function () {
+          var newdiv = document.createElement('div');
+
+          var divIdName = 'presUser_' + this.id;
+
+          newdiv.setAttribute('id', divIdName);
+          newdiv.className = "divtr";
+
+          newdiv.innerHTML ='<div class="short-answer">'+
+                              '<div class="short-answer-one">'+
+                                '1'+
+                              '</div><!--'+
+
+                            '--><div class="short-answer-two">'+
+                                  '<span>'+
+                                    '<h3>Short Answer Question</h3>'+
+                                    '<div class="short_answer_display-edit display-none">'+
+                                      'edit'+
+                                      '<i class="fa fa-pencil-square-o"></i>'+
+                                    '</div>'+
+                                    '<h2 class="short_answer_display">'+
+                                    '</h2>'+
+
+                                    '<input class="short_answer_input" type="text" name="lastname">'+
+                                '</span>'+
+                                '</div>'+
+                                '<button class="delete" title="Delete this" onClick="userController.removeUsersForm(' + "'" + divIdName + "'" + ');">'+
+                                    '<i class="fa fa-times fa-lg"></i>'+
+                                '</button>'+
+
+                              '</div>';
+
+          document.getElementById("main-section-container").appendChild(newdiv);
+
+          this.id = this.id + 1;
+          console.log(this.id);
+          $('.short_answer_display').hide();
+
+          // $(".short_answer_display-edit").hide();// hide the edit button
+
+          // $(".short_answer_display-edit").hide();
+
+      },
+      removeUsersForm: function (id) {
+          document.getElementById(id).remove();
+      }
+  }
+
+
+  $(function () {
+    'use strict';
+
+$(".title-input").attr("placeholder", "Title");
+$(".description-input").attr("placeholder", "Type your description here.");
+  // userController.addUsersForm();
+
+  // $("#short-answer").on('click', userController.addUsersForm());
+  // $( "#short-answer" ).click(userController.addUsersForm());
+
+  // console.log("begin");
+  // $(".short_answer_display-edit").hide();//hide the question edit button
+  //
+  // $('#short-answer').on('click', function () {//append the short answer html
+  //   console.log("end");
+  //   // $('#main-section-container').append('<div class="short-answer">' +
+  //   //
+  //   //                                       '<div class="short-answer-one">'+
+  //   //                                         '1'+
+  //   //                                       '</div><!--'+
+  //   //
+  //   //                                     '--><div class="short-answer-two">'+
+  //   //                                           '<h3>Short Answer Question</h3>'+
+  //   //                                           '<span>'+
+  //   //                                             '<h2 class="short_answer_display">'+
+  //   //                                             '</h2>'+
+  //   //                                             '<i class="fa fa-pencil-square-o short_answer_display-edit"></i>'+
+  //   //                                             '<input class="short_answer_input" type="text" name="lastname">'+
+  //   //                                           '</span>'+
+  //   //                                         '</div>'+
+  //   //                                         '<button class="delete">'+
+  //   //                                           '<i class="fa fa-times fa-lg"></i>'+
+  //   //                                         '</button>'+
+  //   //                                       '</div>');
+  //
+  // });
+  //
+  //
+  // $(".short_answer_display-edit").on('click', function () {// onclick for the edit question button
+  //   console.log("haha");
+  // });
+  //
+  // // $('#long-answer').on('click', function () {
+  // //   // $(this).text('Hi');
+  // //   console.log("end2");
+  // //   $('#main-section-container').append('<div class="short-answer long-answer"><div class="short-answer-one">1</div><div class="short-answer-two"><h3>Short Answer Question</h3><span><h2></h2><input type="text" name="lastname"></span></div><button class="edit"><div class="edit-text">edit</div><i class="fa fa-pencil-square-o fa-lg"></i></button></div>' );
+  // // });
+  //
+  //
+  // $(".short_answer_display-edit").hide();// hide the edit button
+
+
+  $('.short_answer_display').hide();
+
+/////////////////////////////////////////////////////////---------SHORT-ANSWER
+  $("body").on("keypress", "input", function(){
+    if(event.keyCode == 13){
+      var content = $(this).val();
+      console.log(content);
+
+      $(this).hide();
+      // $(this).toggleClass('display-none');
+      $(this).siblings('.short_answer_display').show();
+      $(this).siblings('.short_answer_display').html(content);
+      $(this).siblings(".short_answer_display-edit").toggleClass('display-none');
+      // $(".short_answer_display").html(content);
+    }
+      });
+
+      $("body").on("click", ".short_answer_display-edit", function(){
+        console.log("work");
+        // $(this).next().html('<input class="short_answer_input" type="text">');
+        // $(this).nextAll('input').show();
+        // $(this).nextAll('h2').hide();
+        $(this).toggleClass('display-none');
+        $(this).siblings('.short_answer_input').show();
+        $(this).siblings('.short_answer_display').hide();
+      });
+
+      $("body").on("click", ".short_answer_display", function(){
+        console.log("work");
+        // $(this).next().html('<input class="short_answer_input" type="text">');
+        // $(this).nextAll('input').show();
+        // $(this).nextAll('h2').hide();
+        $(this).hide();
+        $(this).siblings('.short_answer_input').show();
+        $(this).siblings(".short_answer_display-edit").toggleClass('display-none');
+      });
+
+/////////////////////////////////////////////////////////---------HEADER-IN-FORM
+$("form").on("keypress", function (e) {
+    if (e.keyCode == 13) {
+        return false;
+    }
+});//Omits Enter button functionality
+
+
+$(".title-display").hide();//hide display
+$(".title-edit").hide();//hide edit button
+
+
+$(".title-input").on("blur", function(){//when title input is defocused
+  // if(event.keyCode == 9){
+  var contentTitle = $(this).val();//store the content
+  if( $.trim( contentTitle ) == ''){//if the input is blank, do nothing
+    console.log("nothing");
+  }
+  else{//otherwise
+    console.log(contentTitle);
+    console.log("hellothere");
+
+    $(".title-field").hide();//hide the
+
+    // $(this).toggleClass('display-none');
+    $(".title-display").show();
+    $(".title-edit").show();
+    $(".title-display").html(contentTitle);
+  }
+
+    // $(".short_answer_display").html(content);
+  // }
+  });
+
+  $(".title-display").on("click", function(){
+    // if(event.keyCode == 9){
+      console.log("hellowhere?");
+      $(".title-edit").hide();
+      $(".title-display").hide();
+      // $(this).toggleClass('display-none');
+      // $(".title-input").focus();
+      $(".title-field").show();
+      // $(".title-input").focus();
+      // $(".short_answer_display").html(content);
+    // }
+    });
+
+    $(".title-edit").on("click", function(){
+      // if(event.keyCode == 9){
+        console.log("hellowhere?");
+        $(".title-edit").hide();
+        $(".title-display").hide();
+        // $(this).toggleClass('display-none');
+        // $(".title-input").focus();
+        $(".title-field").show();
+        // $(".title-input").focus();
+        // $(".short_answer_display").html(content);
+      // }
+      });
+
+
+
+
+
+
+
+      $(".description-field-display").hide();
+      // $(".description-edit").hide();
+
+
+      $(".description-input").on("blur", function(){
+        // if(event.keyCode == 9){
+        var contentDescription = $(this).val();
+        if( $.trim( contentDescription ) == ''){
+          console.log("nothing");
+        }
+        else{
+          console.log(contentDescription);
+          console.log("hellothere");
+
+          $(".description-field").hide();
+
+          // $(this).toggleClass('display-none');
+          $(".description-display").show();
+          // $(".description-edit").show();
+          $(".description-display").html(contentDescription);
+        }
+
+          // $(".short_answer_display").html(content);
+        // }
+        });
+
+        $(".description-display").on("click", function(){
+          // if(event.keyCode == 9){
+            console.log("hellowhere?");
+            // $(".description-edit").hide();
+            $(".description-display").hide();
+            // $(this).toggleClass('display-none');
+            // $(".title-input").focus();
+            $(".description-field").show();
+            // $(".title-input").focus();
+            // $(".short_answer_display").html(content);
+          // }
+          });
+
+
+          $("body").on("click", "#short-answer", function(){//append inner html of ruby form
+            console.log("function");
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Short Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer" selected="selected">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
+            $('.dropdown-input').val("Short Answer");
+
+            // $(this).next().html('<input class="short_answer_input" type="text">');
+            // $(this).nextAll('input').show();
+            // $(this).nextAll('h2').hide();
+
+          });
+
+          $("body").on("click", "#long-answer", function(){//append inner html of ruby form
+            console.log("function");
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Long Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer" selected="selected">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
+            $('.dropdown-input').val("Short Answer");
+
+            // $(this).next().html('<input class="short_answer_input" type="text">');
+            // $(this).nextAll('input').show();
+            // $(this).nextAll('h2').hide();
+
+          });
+
+          $("body").on("click", "#yes-no", function(){//append inner html of ruby form
+            console.log("function");
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Yes or No</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No" selected="selected">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
+            $('.dropdown-input').val("Short Answer");
+
+
+            // $(this).next().html('<input class="short_answer_input" type="text">');
+            // $(this).nextAll('input').show();
+            // $(this).nextAll('h2').hide();
+
+          });
+
+          $("body").on("click", ".fa-times", function(){
+            $(this).parents().remove(".test");
+          })
+
+        //   $(".question-order-box").each(function(){
+        //   $(".question-order-box").val(index);
+        // });
+        // $(".question-order-box").val(1);
+
+        $("body").click(function(){
+          $(".question-order-box").each(function(index){
+            $(this).val(index + 1);
+            console.log("nice");
+          });
+        });
+
+
+
+
+        document.onmousemove = mouseMove;
+        function mouseMove(ev){
+        	    ev           = ev || window.event;
+        	    var mousePos = mouseCoords(ev);
+        	}
+        	function mouseCoords(ev){
+        	    if(ev.pageX || ev.pageY){
+        	        return {x:ev.pageX, y:ev.pageY};
+        	    }
+        	    return {
+        	        x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+        	        y:ev.clientY + document.body.scrollTop  - document.body.clientTop
+        	    };
+        	}
+
+          // $(".description-edit").on("click", function(){//description-edit-function
+          //   // if(event.keyCode == 9){
+          //     console.log("hellowhere?");
+          //     $(".title-edit").hide();
+          //     $(".title-display").hide();
+          //     // $(this).toggleClass('display-none');
+          //     // $(".title-input").focus();
+          //     $(".title-field").show();
+          //     // $(".title-input").focus();
+          //     // $(".short_answer_display").html(content);
+          //   // }
+          //   });
+      // $("button").click(function(){
+      //     $("<p>This is a new paragraph.</p>").insertAfter("button");
+      // });
+
+
+  // $(".short_answer_input").keydown(function() {// if user pressed enter in the input execute the following
+  // if (event.keyCode == 13)
+  // {
+
+    // console.log("enter");
+    // var shortAnswerInput = $(".short_answer_input").val();// get the contents of the input box
+    // console.log(shortAnswerInput);
+    //
+    // $('.short_answer_input').hide();// hide the input box
+    // $(".short_answer_display").html(shortAnswerInput);//display the input content in the h2 element
+    // $(".short_answer_display-edit").show();//show the edit question button
+    // }
+  // });
+
+});

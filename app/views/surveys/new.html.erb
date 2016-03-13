@@ -41,9 +41,10 @@
         Back to Queries
       </a>
     </span>
+    <%= render 'form' %>
 
-    <div class="main-section-head">
-      
+    <!-- <div class="main-section-head">
+
 
       <div class="main-section-head-left">
         <h1>Dog Survey</h1>
@@ -64,16 +65,16 @@
         </button>
       </div>
 
-    </div>
+    </div> -->
 
-    <div class="main-section-container" id="main-section-container">
+     <div class="main-section-container" id="main-section-container">
 
-      <div class="divtr" id="presUser_1">
+     <!-- <div class="divtr" id="presUser_1">
       <div class="short-answer">
         <div class="short-answer-one">
           1
-        </div><!--
-     --><div class="short-answer-two">
+        </div>
+     <div class="short-answer-two">
             <span>
               <h3>Short Answer Question</h3>
               <div class="short_answer_display-edit display-none">
@@ -90,7 +91,7 @@
               <i class="fa fa-times fa-lg"></i>
           </button>
         </div>
-        </div>
+        </div> -->
 
 
 
@@ -144,16 +145,18 @@
       <div class="aside-container">
         <h2>Add a question</h2>
 
-          <button title="Add" id="short-answer" onClick="userController.addUsersForm();">
+          <button title="Add" id="short-answer">
+            <!-- THIS WENT ON THE ABOVE BUTTON TAG TO MAKE THE FIRST QUESTION HTML APPEND WORK WITH THE CONSTRUCTOR FUNCTION -->
+            <!-- onClick="userController.addUsersForm();" -->
             <h3><i class="fa fa-plus"></i>Short Answer</h3>
           </button>
           <button id="long-answer">
             <h3><i class="fa fa-plus"></i>Long Answer</h3>
           </button>
-          <button class="multiple-choice">
+          <!-- <button class="multiple-choice">
             <h3><i class="fa fa-plus"></i>Multiple Choice</h3>
-          </button>
-          <button class="yes-or-no">
+          </button> -->
+          <button class="yes-or-no" id="yes-no">
             <h3><i class="fa fa-plus"></i>Yes or No</h3>
           </button>
       </div>
@@ -162,9 +165,7 @@
 
 
 
-  <h1>New Survey</h1>
 
-  <%= render 'form' %>
 
   <%= link_to 'Back', surveys_path %>
 

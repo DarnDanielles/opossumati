@@ -4,7 +4,7 @@
 
 
 @mixin border() {
-  border:solid red thin;
+  border:none red thin;
 }
 
 $width:100%;
@@ -32,67 +32,19 @@ $width:100%;
   }
 
 .main-section-head{
+  border:none green thin;
   padding-bottom:2em;
-  .main-section-head-left{
-    // @include border();
-    border:solid blue thin;
-    display: inline-block;
-    .field{
-      display: inline-block;
-      vertical-align: bottom;
-    .field-title{
-      font-size:3em;
-      font-weight: 600;
-      display: inline-block;
-      vertical-align: bottom;
-      @include border();
-    }
-    .field-input{
-      display: inline-block;
-      vertical-align: bottom;
-      font-weight: 600;
-    }
-    .your_class{
-      width:100%;
-      border:solid green thin;
-      font-size:3em;
-      font-weight: 600;
-    }
-    }
-  h1{
-    font-size:3em;
-    font-weight: 600;
-    display: inline-block;
-  }
-  .edit{
-    border:none;
-    background-color:white;
-    font-weight: 600;
-    font-size:1.25em;
-    color:grey;
-    @include border();
-    display: inline-block;
-    // vertical-align: bottom;
-    vertical-align: top;
-  }
-  .edit-text{
-    display: inline-block;
-    vertical-align: bottom;
-  }
-  }
+
   .main-section-head-right{
     @include border();
-    display: inline-block;
-    vertical-align: bottom;
-    float:right;
-    width:40%;
+    border:none red thin;
+    width:100%;
     text-align: right;
-    padding-right: 1em;
 
     .publish{
       display: inline-block;
       vertical-align: bottom;
-      width:48%;
+      width:20%;
       padding-top: .75em;
       padding-bottom:.75em;
       background-color: #93c955;
@@ -106,9 +58,126 @@ $width:100%;
       display: inline-block;
     }
   }
+  .main-section-head-left{
+    // @include border();
+    border:none blue thin;
+    display: inline-block;
+    width:100%;
+    .field{
+      width:96%;
+      display: inline-block;
+      vertical-align: bottom;
+      padding:0;
+      margin:0;
+    .title-label{
+      display:none;
+    }
+    .title-input{
+      width:100%;
+      font-size:3em;
+      font-weight: 600;
+      margin:0;
+      padding:0;
+    }
+    }
+    .title-edit{
+      background-color: white;
+      border:none;
+      font-weight: 600;
+      font-size:1.25em;
+      color:grey;
+      @include border();
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .edit-text{
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .description-display{
+      font-size:1.5em;
+    }
+    .description-field{
+      display:inline;
+      width:100%;
+    .description-input{
+      width:96%;
+      float:none;
+      display:block;
+      font-size:1.5em;
+      height:3em;
+      overflow: scroll;
+    }
+    .description-label{
+      float:none;
+      display: none;
+    }
+    }
+
+  .title-display{
+    font-size:3em;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  }
   }
 
 
+}
+.survey-questions-header{
+  font-size:2em;
+  font-weight: 600;
+}
+.test{
+  padding-top:1.5em;
+  .question-order-box{
+    @include border();
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;;
+    display: inline-block;
+    vertical-align: top;
+    width:6%;
+    text-align: left;
+    font-size: 2em;
+    font-weight: 600;
+    margin-top:-.16em;
+    margin-right:.25em;
+    margin-left:-.25em;
+  }
+  .question-order-box[type=number]::-webkit-inner-spin-button,
+  .question-order-box[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.question-container-right{
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;;
+  width:90%;
+  @include border();
+  display:inline-block;
+  vertical-align: top;
+  .question-type-label{
+    font-size:1.2em;
+    font-weight: 600;
+    padding-bottom:.2em;
+    display:inline-block;
+  }
+  i{
+    float:right;
+    color:red;
+  }
+  .question-description-textarea{
+    width:100%;
+    max-width: 100%;
+  }
+  .question-textarea{
+    width:100%;
+    height:7em;
+    max-width: 100%;
+    font-size:1em;
+  }
+}
 }
 
 .short-answer{
@@ -195,6 +264,14 @@ $width:100%;
       }
       }
       }
+}
+
+.question-type-dropdown{
+  display:none;
+}
+
+.question-order-box{
+  border:none;
 }
 
 aside{

@@ -12,26 +12,58 @@
   <% end %>
   <%= f.hidden_field :author_id %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
 
-  <h3>Questions</h3>
+  <div class="main-section-head">
 
-  <%= f.fields_for :questions do |ff| %>
-    <div>
-      <%= ff.number_field :question_order, placeholder: "Question Order" %>
-      Question Type <%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'] %>
-      <%= ff.text_area :description, placeholder: "Question Description" %>
-      <%= ff.text_area :question_text, placeholder: "Enter your question" %>
-      Required Question <%= ff.check_box :required %>
+    <div class="main-section-head-right">
+      <button class="publish" id="publish">
+        Publish
+        <i class="fa fa-external-link fa-lg"></i>
+      </button>
+      <button class="save publish" id="save">
+        Save
+        <i class="fa fa-floppy-o fa-lg"></i>
+      </button>
     </div>
+
+    <div class="main-section-head-left">
+      <h1 class="title-display"></h1>
+      <div class="field title-field">
+        <!-- <%= f.label :title, class: 'title-label'%><br> -->
+        <%= f.text_field :title, class: 'title-input'%>
+      </div>
+      <div class="title-edit">
+        <div class="edit-text">edit</div>
+        <i class="fa fa-pencil-square-o fa-lg"></i>
+      </div>
+
+      <div class="description-display"></div>
+      <div class="field description-field">
+        <%= f.label :description, class: 'description-label' %><br>
+        <%= f.text_area :description, class: 'description-input' %>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <h3 class="survey-questions-header">Questions</h3>
+  <!-- <div class='test'>
+  <%= f.fields_for :questions do |ff| %>
+      <%= ff.number_field :question_order, placeholder: 'Question Order' %>
+      Question Type<%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], :selected => 'Short Answer', class: 'dropdown-input'%>
+      <%= ff.text_area :description, placeholder: 'Question Description' %>
+      <%= ff.text_area :question_text, placeholder: 'Enter your question' %>
+      Required Question<%= ff.check_box :required,class: 'required-checkbox' %>
     <% end %>
+</div> -->
+    <div class="test2"></div>
+
+
+
   <div class="actions">
     <%= f.submit "New Question" %>
   </div>
