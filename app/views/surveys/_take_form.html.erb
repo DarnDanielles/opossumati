@@ -27,7 +27,7 @@
       <%= ff.hidden_field :id %>
       <%= ff.object.question_text %>
       <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
-        <%= fff.hidden_field :taker_id, :value => 1 %>
+        <%= fff.hidden_field :taker_id, :value => rand(1..10) %>
         <% if ff.object.question_type == 'Yes/No' %>
           <%= fff.radio_button(:response, "Yes") %>
           <%= fff.label(:response_yes, "Yes") %>
