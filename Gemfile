@@ -37,6 +37,8 @@ group :development, :test do
   gem 'rails-footnotes'
 
   gem 'sqlite3'
+
+  gem 'rails-footnotes'
 end
 
 group :development do
