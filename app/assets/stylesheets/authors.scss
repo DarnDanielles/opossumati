@@ -1,3 +1,217 @@
 // Place all the styles related to the Authors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin border() {
+  border:none red thin;
+}
+
+//----------------------------------------------ASIDE--
+$width:100%;
+
+.surveys-aside{
+  display: inline-block;
+  vertical-align: top;
+  width: $width/6;
+  padding: 1em;
+  text-align: left;
+  @include border();
+
+ul{
+  padding-bottom:1em;
+}
+
+.plus{
+  display: inline-block;
+  @include border();
+}
+
+.minus{
+  display:inline-block;
+  @include border();
+}
+h3{
+  display:inline-block;
+  @include border();
+  font-weight: 600;
+  padding:.5em 0;
+
+}
+}
+
+//----------------------------------------------MAIN--
+.main{
+  display:inline-block;
+  vertical-align: top;
+  width:$width * 9/12;
+  height:600px;
+  padding-right:$width / 20;
+  padding-top:2.5em;
+  overflow: scroll;
+  overflow-y: visible;
+  @include border();
+  border:none red thin;
+
+
+  //-------------------------------------UNPUBLISHED-SURVEYS--
+
+  .unpublished-surveys-header{
+    padding-bottom:1.5em;
+    @include border();
+
+  .unpublished-surveys{
+    display: inline-block;
+    margin-right:1em;
+    @include border();
+
+    h2{
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+    h1{
+      font-size:3em;
+      font-weight: 600;
+    }
+    }
+  .new-survey{
+    background-color: #93c955;
+    padding:.25em 2em;
+    border-radius:6px;
+    display: inline-block;
+    vertical-align: bottom;
+    color:white;
+    font-weight:600;
+    font-size:1.3em;
+    border:none;
+    }
+    }
+
+
+  .unpublished-list{
+    padding-bottom: 1em;
+    border-bottom:solid black thin;
+    .unpublished-list-item{
+      padding-bottom:.75em;
+    .publish{
+      width:18%;
+      padding-top: .75em;
+      padding-bottom:.75em;
+      background-color: #93c955;
+      border-radius:3px;
+      display: inline-block;
+      vertical-align: bottom;
+      color:white;
+      font-weight:600;
+      font-size:1em;
+      border:none
+    }
+    .name-and-description{
+      display: inline-block;
+      padding-left:.5em;
+      h2{
+        font-size:1.7em;
+      }
+      p{
+        font-style: italic;
+      }
+    }
+    .edit{
+      border:none;
+      background-color:white;
+      font-weight: 600;
+      font-size:1.25em;
+      @include border();
+      // display: inline-block;
+      // vertical-align: bottom;
+      float:right;
+      vertical-align: bottom;
+
+      .edit-text{
+        display: inline-block;
+        vertical-align: bottom;
+      }
+
+      }
+      }
+  }
+
+  //-------------------------------------PUBLISHED-SURVEYS--
+
+  .published-surveys-header{
+    padding-top:1.5em;
+    padding-bottom:1.5em;
+    @include border();
+
+  .published-surveys{
+    display: inline-block;
+    margin-right:1em;
+    @include border();
+
+    h2{
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+    h1{
+      font-size:3em;
+      font-weight: 600;
+    }
+    }
+    }
+
+
+  .published-list{
+    padding-bottom: 1em;
+    .published-list-item{
+      padding-bottom:.75em;
+    .stats{
+      width:18%;
+      background-color: grey;
+      padding-top: .75em;
+      padding-bottom:.75em;
+      border-radius:3px;
+      display: inline-block;
+      vertical-align: bottom;
+      color:white;
+      font-weight:600;
+      font-size:1em;
+      border:none
+    }
+    .name-and-description{
+      display: inline-block;
+      padding-left:.5em;
+      h2{
+        font-size:1.7em;
+      }
+      p{
+        font-style: italic;
+      }
+    }
+    .submissions{
+      border:none;
+      background-color:white;
+      font-weight: 400;
+      font-style: italic;
+      font-size:1em;
+      @include border();
+      // display: inline-block;
+      // vertical-align: bottom;
+      float:right;
+      vertical-align: bottom;
+
+      .submissions-text{
+        display: inline-block;
+        vertical-align: bottom;
+      }
+
+      }
+      }
+  }
+
+
+
+
+}
+
+.display-none{
+	display:none;
+}

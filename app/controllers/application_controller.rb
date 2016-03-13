@@ -7,5 +7,11 @@ class ApplicationController < ActionController::Base
     redirect_to login_path, notice: "Please login first" unless session[:user_id]
   end
 
+  # def unique_question_order
+  #   if Question.where(survey.id == question.survey_id)
+  #     flash.now[:alert] = "Question order is taken"
+  #   end
+  # end
+
 
 end

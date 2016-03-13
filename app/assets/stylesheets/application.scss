@@ -1,0 +1,145 @@
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+//-----------------------------------------------RESET-STYLES--
+
+
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+	}
+body {
+	background: white;
+	line-height: 1;
+	color: black;
+	}
+ol, ul {
+	list-style: none;
+	}
+/* tables still need cellspacing="0" in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+	}
+/* remove possible quote marks (") from <q> & <blockquote> */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	}
+blockquote, q {
+	quotes: "" "";
+	}
+
+
+//-------------------------------------------END-RESET-STYLES--
+
+
+
+body{
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  margin:0 auto;
+}
+
+.container{
+	width:85%;
+	  max-width:1250px;
+	margin:0 auto;
+}
+
+//-------------------------------------------STYLING-FOR-HEADER--
+
+@mixin border() {
+  border:solid red thin;
+}
+
+.display-none{
+	display:none;
+}
+
+header {
+  width: 100%;
+  // height: 100px;
+  // border: 4px solid rgb(200,200,200);
+  background-color: rgb(230,230,230);
+  padding:1.5em 0 1em 0;
+  // display: inline-block;
+
+}
+
+.nQuery-logo {
+  // margin-top: 1em;
+	width:12%;
+  margin-left: 2%;
+	display: inline-block;
+  // font-size: 60px;
+  // float: left;
+  // cursor: pointer;
+}
+
+.header-right{
+	font-size: 1.5em;
+	font-weight: 600;
+	float:right;
+	@include border();
+	display: inline-block;
+
+	h2{
+		@include border();
+
+		display: inline-block;
+		padding-right:1em;
+	}
+}
+
+//
+// .fancyLogin {
+//   /*border: 1px solid rgb(30,144,255);*/
+//   // border: 1px solid black;
+//   @include border();
+//   background-color: rgb(30,144,255);
+//   float: right;
+//   // height: 98px;
+//   width: 200px;
+//   text-align: center;
+// }
+//
+// .user {
+//   // font-size: 30px;
+//   // margin-top: 40px;
+//   // margin-right: 2%;
+//   // color: rgb(230,230,230);
+//   // cursor: pointer;
+// }

@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  
+  # before_action :unique_question_order
+
   # GET /questions
   # GET /questions.json
   def index
@@ -70,6 +71,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:survey_id, :question_type, :description, :required)
+      params.require(:question).permit(:survey_id, :question_type, :question_order, :description, :required)
     end
 end
