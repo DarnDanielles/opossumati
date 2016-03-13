@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
   before_action :logged_in?
 
   # GET /surveys
@@ -11,12 +11,13 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   # GET /surveys/1.json
   def show
-    redirect_to edit_survey_path
+    @survey = Survey.find(params[:id])
+    @survey.answers.build
   end
 
   # GET /surveys/new
   def new
-    @survey = Survey.new
+    @survey = Survey.new(author_id: session[:user_id])
     @survey.questions.build
   end
 
@@ -29,28 +30,20 @@ class SurveysController < ApplicationController
   # POST /surveys.json
   def create
     @survey = Survey.new(survey_params)
-    respond_to do |format|
-      if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
-        format.json { render :show, status: :created, location: @survey }
-      else
-        format.html { render :new }
-        format.json { render json: @survey.errors, status: :unprocessable_entity }
-      end
+    if @survey.save
+      redirect_to @survey, notice: 'Survey was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /surveys/1
   # PATCH/PUT /surveys/1.json
   def update
-    respond_to do |format|
-      if @survey.update(survey_params)
-        format.html { redirect_to edit_survey_path, notice: 'Survey was successfully updated.' }
-        format.json { render :show, status: :ok, location: @survey }
-      else
-        format.html { render :edit }
-        format.json { render json: @survey.errors, status: :unprocessable_entity }
-      end
+    if @survey.update(survey_params)
+      redirect_to @survey, notice: 'Survey was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -59,9 +52,11 @@ class SurveysController < ApplicationController
   def destroy
     @survey.destroy
     respond_to do |format|
-      format.html { redirect_to surveys_url, notice: 'Survey was successfully destroyed.' }
-      format.json { head :no_content }
+      redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
     end
+  end
+
+  def take
   end
 
   private
@@ -72,6 +67,8 @@ class SurveysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
-      params.require(:survey).permit(:author_id, :title, :description, questions_attributes: [:id, :question_order, :question_type, :question_description, :question_text, :required])
+      params.require(:survey).permit(:author_id, :title, :description,
+        questions_attributes: [:id, :question_order, :question_type, :question_description, :question_text, :required,
+          answers_attributes: [:question_id, :taker_id, :response]])
     end
 end
