@@ -21,7 +21,7 @@
         <td><%= link_to 'Publish', take_survey_url(survey) %></td>
         <td><%= link_to 'See Results', answers_path(survey_id: survey.id) %></td>
         <td><%= link_to 'Show', survey %></td>
-        <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
+        <td><%= link_to 'Edit', edit_survey_path(id: survey.id) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

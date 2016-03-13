@@ -94,13 +94,13 @@ process of taking a survey).
 /* Takers cannot change their answers once they have submitted a survey
 /* Takers can take the survey as many times as they want
 * Takers cannot submit a survey until the required fields have been filled in
-* Authors cannot edit a survey after one or more submissions have been made for the survey
+/* Authors cannot edit a survey after one or more submissions have been made for the survey
   = on edit view for that survey write this: "unless @survey.answers.nil? notice: 'You can no longer edit this survey.' else 'render take_survey'" or "@survey.takers.nil?"
 
 **Viewing Results**
 
-* Authors can view all of the answers for any survey they have created
-* In this view, answers are grouped by question
+/* Authors can view all of the answers for any survey they have created
+/* In this view, answers are grouped by question
 
 ## Hard Mode
 

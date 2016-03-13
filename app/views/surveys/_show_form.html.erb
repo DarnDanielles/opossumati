@@ -27,21 +27,7 @@
       <%= ff.hidden_field :id %>
       <%= ff.object.question_text %>
       <%= ff.object.description %>
-      <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
-        <%= fff.hidden_field :taker_id, :value => rand(1..10) %>
-        <% if ff.object.question_type == 'Yes/No' %>
-          <%= fff.radio_button(:response, "Yes") %>
-          <%= fff.label(:response_yes, "Yes") %>
-          <%= fff.radio_button(:response, "No") %>
-          <%= fff.label(:response_no, "No") %>
-        <% elsif ff.object.question_type == 'Short Answer' %>
-          <% fff.label :response %>
-          <%= fff.text_field :response %>
-        <% elsif ff.object.question_type == 'Long Answer'%>
-          <% fff.label :response %>
-          <%= fff.text_area :response, size: "24x6" %>
-        <% end %>
-      <% end %>
+      Question Type <%= ff.object.question_type %>
     </div>
   <% end %>
 
@@ -49,5 +35,4 @@
     <%= f.submit "Submit Survey" %>
   </div>
 <% end %>
-<%= link_to 'Logout', logout_path, method: :delete %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to 'Logout', logout_path, method: :delete %>
