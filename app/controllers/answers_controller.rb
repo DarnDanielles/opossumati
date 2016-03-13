@@ -3,6 +3,7 @@ require 'byebug'
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
+  # before_action :required_question, only: [:create]
 
   # GET /answers
   # GET /answers.json
@@ -34,7 +35,9 @@ class AnswersController < ApplicationController
     if @survey.update(answer_params)
       redirect_to @survey, notice: 'Answer was successfully created.'
     else
-      render :new
+      @survey = Taker.find(params[:question_attributes])
+
+      redirect_to take_survey_url(@survey), notice: 'Please answer all required questions!'
     end
   end
 
@@ -61,10 +64,18 @@ class AnswersController < ApplicationController
       @answer = Answer.find(params[:id])
     end
 
+    # def required_question
+    #   @survey.questions.each do |q|
+    #     if q.required
+    #       flash.now[:alert] = 'You must answer this question to continue' unless @answer.response
+    #     end
+    #   end
+    # end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
       params.require(:survey).permit(:id,
-        questions_attributes: [:id,
+        questions_attributes: [:id, :required,
           answers_attributes: [:question_id, :taker_id, :response]])
     end
 end

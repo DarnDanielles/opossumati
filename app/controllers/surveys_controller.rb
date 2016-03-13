@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
   before_action :logged_in?, except: [:show, :take]
+  # before_action :required_question, only: [:take]
 
   # GET /surveys
   # GET /surveys.json
@@ -62,11 +63,20 @@ class SurveysController < ApplicationController
     def set_survey
       @survey = Survey.find(params[:id])
     end
+    # 
+    # def required_question
+    #   @survey.questions.each do |q|
+    #     if q.required
+    #       flash.now[:alert] = 'You must answer this question to continue' unless @survey.answers.response
+    #     end
+    #   end
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def survey_params
-      params.require(:survey).permit(:author_id, :title, :description,
-        questions_attributes: [:id, :question_order, :question_type, :question_description, :question_text, :required,
-          answers_attributes: [:question_id, :taker_id, :response]])
-    end
+    # def survey_params
+    #   params.require(:survey).permit(:author_id, :title, :description,
+    #     questions_attributes: [:id, :question_order, :question_type,
+    #       :description, :question_text, :required,
+    #       answers_attributes: [:question_id, :taker_id, :response]])
+    # end
 end
