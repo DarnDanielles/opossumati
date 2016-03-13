@@ -34,8 +34,31 @@ $width:100%;
 .main-section-head{
   padding-bottom:2em;
   .main-section-head-left{
-    @include border();
+    // @include border();
+    border:solid blue thin;
     display: inline-block;
+    .field{
+      display: inline-block;
+      vertical-align: bottom;
+    .field-title{
+      font-size:3em;
+      font-weight: 600;
+      display: inline-block;
+      vertical-align: bottom;
+      @include border();
+    }
+    .field-input{
+      display: inline-block;
+      vertical-align: bottom;
+      font-weight: 600;
+    }
+    .your_class{
+      width:100%;
+      border:solid green thin;
+      font-size:3em;
+      font-weight: 600;
+    }
+    }
   h1{
     font-size:3em;
     font-weight: 600;
@@ -48,9 +71,9 @@ $width:100%;
     font-size:1.25em;
     color:grey;
     @include border();
-    // display: inline-block;
+    display: inline-block;
     // vertical-align: bottom;
-    vertical-align: bottom;
+    vertical-align: top;
   }
   .edit-text{
     display: inline-block;
@@ -111,13 +134,18 @@ $width:100%;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 300;
+    display:inline-block;
+    @include border();
+
   }
   span{
     h2{
       font-size:1.5em;
       font-weight: 600;
-      display: inline-block;
-      padding-top:.2em;
+      padding-top:.4em;
+      padding-bottom:.3em;
+      @include border();
+
     }
     input{
       width:90%;
@@ -127,6 +155,12 @@ $width:100%;
       border-radius:2px;
       padding:.25em .5em;
       padding-left:.4em;
+      display: inline-block;
+
+    }
+    .short_answer_display-edit{
+      @include border();
+      float:right;
 
     }
     }
@@ -200,3 +234,7 @@ aside{
   }
   }
 }
+
+
+
+//----------------------------------PLAYING-WITH-SKULL-TAGS

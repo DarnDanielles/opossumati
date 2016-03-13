@@ -3,7 +3,6 @@
   <meta charset="UTF-8">
   <!-- <link rel="stylesheet" type="text/css" href="../assets/stylesheets/application.scss"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
 </head>
 <body>
   <div class="container">
@@ -44,6 +43,7 @@
     </span>
 
     <div class="main-section-head">
+      
 
       <div class="main-section-head-left">
         <h1>Dog Survey</h1>
@@ -72,23 +72,50 @@
       <div class="short-answer">
         <div class="short-answer-one">
           1
-        </div>
-
-      <div class="short-answer-two">
-            <h3>Short Answer Question</h3>
+        </div><!--
+     --><div class="short-answer-two">
             <span>
+              <h3>Short Answer Question</h3>
+              <div class="short_answer_display-edit display-none">
+                edit
+                <i class="fa fa-pencil-square-o"></i>
+              </div>
               <h2 class="short_answer_display">
               </h2>
-              <i class="fa fa-pencil-square-o short_answer_display-edit"></i>
+
               <input class="short_answer_input" type="text" name="lastname">
             </span>
           </div>
           <button class="delete" title="Delete this" onClick="userController.removeUsersForm('presUser_1');">
               <i class="fa fa-times fa-lg"></i>
           </button>
+        </div>
+        </div>
 
-        </div>
-        </div>
+
+
+        <!-- <div class="divtr" id="presUser_1">
+        <div class="long-answer">
+          <div class="short-answer-one">
+            1
+          </div>
+        <div class="short-answer-two">
+          <h3>Short Answer Question</h3>
+              <span>
+                <div class="short_answer_display-edit display-none">
+                  edit
+                  <i class="fa fa-pencil-square-o"></i>
+                </div>
+                <h2 class="short_answer_display">
+                </h2>
+                <input class="short_answer_input" type="text" name="lastname">
+              </span>
+            </div>
+            <button class="delete" title="Delete this" onClick="userController.removeUsersForm('presUser_1');">
+                <i class="fa fa-times fa-lg"></i>
+            </button>
+          </div>
+          </div> -->
 
 
         <!-- <div class="short-answer long-answer">
@@ -117,7 +144,7 @@
       <div class="aside-container">
         <h2>Add a question</h2>
 
-          <button title="Add" onClick="userController.addUsersForm();">
+          <button title="Add" id="short-answer" onClick="userController.addUsersForm();">
             <h3><i class="fa fa-plus"></i>Short Answer</h3>
           </button>
           <button id="long-answer">
