@@ -9,5 +9,3 @@
 
 Author.create(email: "dame@mail.com", password: "password", name: "Dame")
 Author.create(email: "geoff@mail.com", password: "password", name: "Geoff")
-
-Taker.

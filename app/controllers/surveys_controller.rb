@@ -5,7 +5,7 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(author_id: session[:user_id])
   end
 
   # GET /surveys/1
@@ -51,9 +51,7 @@ class SurveysController < ApplicationController
   # DELETE /surveys/1.json
   def destroy
     @survey.destroy
-    respond_to do |format|
-      redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
-    end
+    redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
   end
 
   def take
