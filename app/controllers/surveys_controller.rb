@@ -1,18 +1,19 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
   before_action :logged_in?, except: [:show, :take]
+  before_action :survey_taken?, only: [:edit]
 
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(author_id: session[:user_id])
   end
 
   # GET /surveys/1
   # GET /surveys/1.json
   def show
     @survey = Survey.find(params[:id])
-    @survey.answers.build
+    @survey.answers
   end
 
   # GET /surveys/new
@@ -23,7 +24,9 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    # @survey = Survey.find_by(id: params[:survey_id])
     @survey.questions.build
+    # @survey.questions.build
   end
 
   # POST /surveys
@@ -51,9 +54,7 @@ class SurveysController < ApplicationController
   # DELETE /surveys/1.json
   def destroy
     @survey.destroy
-    respond_to do |format|
-      redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
-    end
+    redirect_to surveys_url, notice: 'Survey was successfully destroyed.'
   end
 
   def take
@@ -65,10 +66,16 @@ class SurveysController < ApplicationController
       @survey = Survey.find(params[:id])
     end
 
+    def survey_taken?
+      if @survey.answers.first
+        redirect_to surveys_path, notice: 'You cannot edit a survey that has already been taken.'
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
-        questions_attributes: [:id, :question_order, :question_type, :question_description, :question_text, :required,
+        questions_attributes: [:id, :question_order, :question_type, :description, :question_text, :required,
           answers_attributes: [:question_id, :taker_id, :response]])
     end
 end

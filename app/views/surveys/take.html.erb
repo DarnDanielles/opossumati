@@ -2,6 +2,7 @@
 
 <%= render 'take_form' %>
 
-<%= link_to 'Show', @survey %> |
-<%= link_to 'Publish', surveys_path %>
-<%= link_to 'Logout', logout_path, method: :delete %>
+<% if session[:user_id] %>
+  Here is your link to disseminate your survey: <%= link_to request.original_url  %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+<% end %>

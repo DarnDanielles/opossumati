@@ -7,7 +7,8 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Answer.all
+    @survey = Survey.find_by(id: params[:survey_id])
+    @answers = @survey.answers.order(:question_id)
   end
 
   # GET /answers/1
