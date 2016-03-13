@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in?
+  before_action :logged_in?, except: [:new]
 
   # GET /authors
   # GET /authors.json
@@ -49,7 +49,6 @@ class AuthorsController < ApplicationController
   def destroy
     @author.destroy
       redirect_to authors_url, notice: 'Author was successfully destroyed.'
-    end
   end
 
   private
