@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311182554) do
+ActiveRecord::Schema.define(version: 20160312234234) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160311182554) do
     t.datetime "updated_at",     null: false
     t.text     "question_text"
     t.integer  "question_order"
+    t.integer  "priority"
   end
 
   create_table "surveys", force: :cascade do |t|

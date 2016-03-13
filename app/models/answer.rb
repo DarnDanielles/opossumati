@@ -1,4 +1,4 @@
 class Answer < ActiveRecord::Base
   belongs_to :taker
-  belongs_to :survey
+  belongs_to :question
 end

@@ -1,0 +1,38 @@
+<%= form_for @survey, url: answers_path do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.object.title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.object.description %>
+  </div>
+
+  <h3>Questions</h3>
+  <%= f.hidden_field :id %>
+  <%= f.fields_for :questions do |ff| %>
+    <div>
+      <%= ff.hidden_field :id %>
+      <%= ff.object.question_text %>
+      <%= ff.object.description %>
+      Question Type <%= ff.object.question_type %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Submit Survey" %>
+  </div>
+<% end %>
+<%= link_to 'Logout', logout_path, method: :delete %>

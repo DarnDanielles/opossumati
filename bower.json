@@ -1,0 +1,22 @@
+{
+  "name": "opossumati",
+  "homepage": "https://github.com/DarnDanielles/opossumati",
+  "authors": [
+    "Daniel Buompane <danielbuompane@gmail.com>"
+  ],
+  "description": "survey app",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html.sortable": "^0.3.1"
+  }
+}

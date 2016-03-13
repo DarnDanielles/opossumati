@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get 'surveys/take/:id', to: 'surveys#take', as: 'take_survey'
+  patch 'answers' => 'answers#create'
 
   get 'adele/index'
   root 'surveys#index'
+
 
   resources :answers
   resources :takers

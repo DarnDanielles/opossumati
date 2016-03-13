@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :author_id %>
 
 
   <div class="main-section-head">
@@ -47,7 +46,8 @@
     </div>
 
 
-  </div>
+  <%= f.hidden_field :author_id %>
+
 
 
   <h3 class="survey-questions-header">Questions</h3>
@@ -65,8 +65,9 @@
 
 
   <div class="actions">
-    <%= f.submit "New Question" %>
+    <%= f.submit "Save Question" %>
   </div>
 <% end %>
 
 <%= link_to 'Logout', logout_path, method: :delete %>
+<%= link_to 'Back', surveys_path %>
