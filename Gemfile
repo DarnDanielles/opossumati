@@ -37,6 +37,10 @@ group :development, :test do
   gem 'byebug'
   gem 'rails-footnotes'
   gem 'sqlite3'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8e168879a50e019a229e692601564d0611eea0d9
 end
 
 group :development do

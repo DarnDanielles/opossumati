@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
   # GET /answers.json
   def index
     @survey = Survey.find_by(id: params[:survey_id])
-    @answers = @survey.answers
+    @answers = @survey.answers.order(:question_id)
   end
 
   # GET /answers/1

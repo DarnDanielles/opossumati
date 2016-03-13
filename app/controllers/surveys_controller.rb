@@ -1,7 +1,11 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
   before_action :logged_in?, except: [:show, :take]
+<<<<<<< HEAD
   # before_action :required_question, only: [:take]
+=======
+  before_action :survey_taken?, only: [:edit]
+>>>>>>> 8e168879a50e019a229e692601564d0611eea0d9
 
   # GET /surveys
   # GET /surveys.json
@@ -24,7 +28,9 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1/edit
   def edit
+    # @survey = Survey.find_by(id: params[:survey_id])
     @survey.questions.build
+    # @survey.questions.build
   end
 
   # POST /surveys
@@ -72,11 +78,25 @@ class SurveysController < ApplicationController
     #   end
     # end
 
+    def survey_taken?
+      if @survey.answers.first
+        redirect_to surveys_path, notice: 'You cannot edit a survey that has already been taken.'
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
+<<<<<<< HEAD
     # def survey_params
     #   params.require(:survey).permit(:author_id, :title, :description,
     #     questions_attributes: [:id, :question_order, :question_type,
     #       :description, :question_text, :required,
     #       answers_attributes: [:question_id, :taker_id, :response]])
     # end
+=======
+    def survey_params
+      params.require(:survey).permit(:author_id, :title, :description,
+        questions_attributes: [:id, :question_order, :question_type, :description, :question_text, :required,
+          answers_attributes: [:question_id, :taker_id, :response]])
+    end
+>>>>>>> 8e168879a50e019a229e692601564d0611eea0d9
 end

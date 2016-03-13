@@ -26,8 +26,9 @@
     <div>
       <%= ff.hidden_field :id %>
       <%= ff.object.question_text %>
+      <%= ff.object.description %>
       <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
-        <%= fff.hidden_field :taker_id, :value => rand(1..10) %>
+        <%= fff.hidden_field :taker_id, :value => session[:id] %>
         <% if ff.object.question_type == 'Yes/No' %>
           <%= fff.radio_button(:response, "Yes") %>
           <%= fff.label(:response_yes, "Yes") %>
@@ -40,6 +41,9 @@
           <% fff.label :response %>
           <%= fff.text_area :response, size: "24x6" %>
         <% end %>
+        <% if ff.object.required %>
+          Required
+        <% end %>
       <% end %>
     </div>
   <% end %>
@@ -48,4 +52,5 @@
     <%= f.submit "Submit Survey" %>
   </div>
 <% end %>
-<%= link_to 'Logout', logout_path, method: :delete %>
+<%= link_to 'Logout', logout_path, method: :delete %> |
+<%= link_to 'Back', surveys_path %>
