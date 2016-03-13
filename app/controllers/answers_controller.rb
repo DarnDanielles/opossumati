@@ -7,11 +7,8 @@ class AnswersController < ApplicationController
   # GET /answers
   # GET /answers.json
   def index
-    @answers = Survey.find_by(author_id: session[:user_id]).answers
-    # survey_identity = Survey.find_by(author_id: session[:user_id]).id
-    # question_identity = Question.all.each.where(survey_id: survey_identity).id
-    # @answers = Answer.where(question_id: question_identity)
-    # @answers = Answer.where(question_id: question_identification)
+    @survey = Survey.find_by(id: params[:survey_id])
+    @answers = @survey.answers
   end
 
   # GET /answers/1

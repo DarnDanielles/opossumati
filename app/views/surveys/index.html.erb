@@ -15,10 +15,11 @@
     <% @surveys.each do |survey| %>
       <tr>
         <% survey.author_id %>
+        <% @survey_identity = survey.id %>
         <td><%= survey.title %></td>
         <td><%= survey.description %></td>
         <td><%= link_to 'Publish', take_survey_url(survey) %></td>
-        <td><%= link_to 'See Results', survey.answers %>
+        <td><%= link_to 'See Results', answers_path(survey_id: survey.id) %></td>
         <td><%= link_to 'Show', survey %></td>
         <td><%= link_to 'Edit', edit_survey_path(survey) %></td>
         <td><%= link_to 'Destroy', survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
