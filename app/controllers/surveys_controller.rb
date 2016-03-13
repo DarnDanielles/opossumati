@@ -41,7 +41,7 @@ class SurveysController < ApplicationController
   # PATCH/PUT /surveys/1.json
   def update
     if @survey.update(survey_params)
-      redirect_to edit_survey_path, notice: 'Survey was successfully updated.'
+      redirect_to @survey, notice: 'Survey was successfully updated.'
     else
       render :edit
     end
