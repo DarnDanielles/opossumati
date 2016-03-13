@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
 
   def new
+    @author = Author.new
   end
 
   def create
@@ -21,7 +22,4 @@ class SessionsController < ApplicationController
     redirect_to login_path, notice: "Logged out, have a nice day!"
   end
 
-  def add_author
-    @new_author = Author.new(author_params)
-  end
 end
