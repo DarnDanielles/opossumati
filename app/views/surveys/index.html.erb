@@ -13,8 +13,10 @@
            </div>
 
            <div class="header-right">
-             <h2>Login</h2>
+             <h2>Log out</h2>
              <h2>SignUp</h2>
+             <h2><button class="Log out"><%= link_to 'Logout', logout_path, method: :delete %></button></h2>
+             <h2><button class="SignUp"><%= link_to 'Sign Up', new_author_path %></button></h2>
            </div>
 
              <!-- <div class= "fancyLogin">
@@ -90,7 +92,7 @@
       <h2>John Doe</h2>
       <h1>Unpublished Queries</h2>
     </div>
-    <button class="new-survey">new survey</button>
+    <button class="new-survey"><%= link_to 'New Survey', new_survey_path %></button>
     </div>
 
     <div class="unpublished-list">

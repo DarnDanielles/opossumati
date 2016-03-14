@@ -12,7 +12,7 @@
         <div class= "topWrap">
         <div class= "nQuery"><span id="N">N</span><span id="Q">Q</span>uery</div>
             <div class= "fancyLogin">
-              <div class= "user">login</div>
+              <div class= "user">login<%= form_tag(login_path) do %><%= submit_tag "Log in" %><% end %></div>
               </div>
               <div class="land">
               </div>
@@ -64,17 +64,29 @@
 
       <!-- MODAL -->
       <div class="signModal">
+        <%= form_for(@author) do |f| %>
+          <% if @author.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
+              <ul>
+              <% @author.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div class= "mInputField">
           <a href="#" class="exit"><i class="fa fa-times"></i></a>
-          <div class="mInput mUser">name</div>
+          <div class="mInput mUser"><%= f.label :name %><%= f.text_field :name %></div>
           <input type="text" name="name" class="joinM">
-          <div class="mInput mPassword">password</div>
+          <div class="mInput mPassword"><%= f.label :password %><%= f.password_field :password %></div>
           <input type="text" name="name" class="joinM">
-          <div class="mInput mEmail">email</div>
+          <div class="mInput mEmail"><%= f.label :email %><%= f.text_field :email %></div>
           <input type="text" name="name" class="joinM">
-          <div id="signUp"><div class="sU">Sign Up</div>
+          <div id="signUp"><div class="sU"><%= f.submit %></div>
           </div>
         </div>
+        <% end %>
       </div>
 
 
