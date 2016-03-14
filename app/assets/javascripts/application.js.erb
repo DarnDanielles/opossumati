@@ -410,7 +410,7 @@ $(".title-input").on("blur", function(){//when title input is defocused
   $(".exit").on('click', function() {
      $(".signModal").fadeOut("slow");
   })
-  $("body").on('click', function() {
+  $("signModal").on('click', function() {
     $(this).fadeOut("slow");
   })
   // $(".Nter").on('click', function() {
@@ -420,6 +420,7 @@ $(".title-input").on("blur", function(){//when title input is defocused
   //    $(".signModal").fadeOut("slow");
   // })
   //toggles querious
+
   $(".Nter").hide();
   $('.Nquerious').on('click', function(){
     $('.disVision').fadeIn("slow");

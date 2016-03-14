@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
 
     if @author.save
-      redirect_to @author, notice: 'Author was successfully created.'
+      redirect_to login_path, notice: 'Author was successfully created.'
     else
       render :new
     end
