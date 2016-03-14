@@ -35,9 +35,7 @@ class AnswersController < ApplicationController
     if @survey.update(answer_params)
       redirect_to @survey, notice: 'Answer was successfully created.'
     else
-      @survey = Taker.find(params[:question_attributes])
-
-      redirect_to take_survey_url(@survey), notice: 'Please answer all required questions!'
+      redirect_to :back, notice: 'Please answer all required questions!'
     end
   end
 
@@ -63,14 +61,6 @@ class AnswersController < ApplicationController
     def set_answer
       @answer = Answer.find(params[:id])
     end
-
-    # def required_question
-    #   @survey.questions.each do |q|
-    #     if q.required
-    #       flash.now[:alert] = 'You must answer this question to continue' unless @answer.response
-    #     end
-    #   end
-    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
