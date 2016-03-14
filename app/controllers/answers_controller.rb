@@ -2,8 +2,8 @@ require 'byebug'
 
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in?
-  # before_action :required_question, only: [:create]
+  before_action :logged_in?, except: [:create]
+  
 
   # GET /answers
   # GET /answers.json
