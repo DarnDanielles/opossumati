@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+
 <%= form_for @survey, url: answers_path do |f| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +30,7 @@
       <%= ff.object.question_text %>
       <%= ff.object.description %>
       <%= ff.fields_for :answers, ff.object.answers.build do |fff| %>
-        <%= fff.hidden_field :taker_id, :value => session[:id] %>
+        <%= fff.hidden_field :taker_id, :value => @taker.id %>
         <% if ff.object.question_type == "Yes/No" %>
           <%= fff.radio_button(:response, "Yes") %>
           <%= fff.label(:response, "Yes") %>

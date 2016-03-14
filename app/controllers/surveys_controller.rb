@@ -61,6 +61,7 @@ class SurveysController < ApplicationController
   end
 
   def take
+    @taker = Taker.create(survey_id: params[:id])
   end
 
   private
@@ -79,7 +80,7 @@ class SurveysController < ApplicationController
 
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
-        questions_attributes: [:id, :question_order, :question_type, :description, :question_text, :required,
+        questions_attributes: [:id, :survey_id, :question_order, :question_type, :description, :question_text, :required,
           answers_attributes: [:question_id, :taker_id, :response]])
     end
 end
