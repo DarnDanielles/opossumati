@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
-  # before_action :unique_question_order
+
 
   # GET /questions
   # GET /questions.json
