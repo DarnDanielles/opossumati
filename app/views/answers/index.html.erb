@@ -15,7 +15,8 @@
   <tbody>
     <% @answers.each do |answer| %>
       <tr>
-        <td><%= answer.question_id %></td>
+        <td><%= answer.question.question_order %></td>
+        <td><%= answer.question.question_text %></td>
         <td><%= answer.taker_id %></td>
         <td><%= answer.response %></td>
       </tr>

@@ -20,6 +20,10 @@ $width:100%;
 ul{
   padding-bottom:1em;
 }
+.unpublished-header{
+  background-color:white;
+  border:none;
+  font-size:1.25em;
 
 .plus{
   display: inline-block;
@@ -30,12 +34,17 @@ ul{
   display:inline-block;
   @include border();
 }
+.display-none{
+  display:none;
+}
 h3{
   display:inline-block;
   @include border();
   font-weight: 600;
   padding:.5em 0;
+  font-size:1.2em;
 
+}
 }
 }
 
@@ -79,7 +88,8 @@ h3{
     border-radius:6px;
     display: inline-block;
     vertical-align: bottom;
-    color:white;
+    float:right;
+    color:black;
     font-weight:600;
     font-size:1.3em;
     border:none;
@@ -90,8 +100,12 @@ h3{
   .unpublished-list{
     padding-bottom: 1em;
     border-bottom:solid black thin;
+
     .unpublished-list-item{
-      padding-bottom:.75em;
+      @include border();
+      padding-bottom:1em;
+
+
     .publish{
       width:18%;
       padding-top: .75em;
@@ -99,17 +113,48 @@ h3{
       background-color: #93c955;
       border-radius:3px;
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: top;
       color:white;
       font-weight:600;
       font-size:1em;
-      border:none
+      border:none;
+      i{
+        color:black;
+      }
+      a{
+        color:black;
+      }
+    }
+    .see-results{
+      width:18%;
+      padding-top: .75em;
+      padding-bottom:.75em;
+      background-color: lightgrey;
+      border-radius:3px;
+      display: inline-block;
+      vertical-align: top;
+      color:white;
+      font-weight:600;
+      font-size:1em;
+      border:none;
+      i{
+        color:black;
+      }
+      a{
+        color:black;
+      }
     }
     .name-and-description{
       display: inline-block;
       padding-left:.5em;
+      width:40%;
       h2{
         font-size:1.7em;
+        color:black;
+        font-weight: 400;
+        a{
+
+        }
       }
       p{
         font-style: italic;
@@ -125,16 +170,33 @@ h3{
       // vertical-align: bottom;
       float:right;
       vertical-align: bottom;
-
+      a{
+        color:black;
+      }
+      a:visited{
+        color:black;
+      }
       .edit-text{
         display: inline-block;
         vertical-align: bottom;
       }
-
+      }
+      .delete-survey{
+        float:right;
+        border:none;
+        background-color: white;
+        color:red;
+        a{
+          font-weight: 600;
+          font-size:1.75em;
+        }
       }
       }
   }
-
+  .notice a{
+    color:red;
+    font-style: italic;
+  }
   //-------------------------------------PUBLISHED-SURVEYS--
 
   .published-surveys-header{

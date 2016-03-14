@@ -73,6 +73,11 @@ body{
   margin:0 auto;
 }
 
+a{
+	text-decoration: none;
+}
+
+
 .container{
 	width:85%;
 	  max-width:1250px;
@@ -82,7 +87,7 @@ body{
 //-------------------------------------------STYLING-FOR-HEADER--
 
 @mixin border() {
-  border:solid red thin;
+  border:none red thin;
 }
 
 .display-none{
@@ -121,6 +126,10 @@ header {
 
 		display: inline-block;
 		padding-right:1em;
+		a{
+			text-decoration: none;
+			color:black;
+		}
 	}
 }
 

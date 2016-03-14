@@ -263,12 +263,15 @@ $(".title-input").on("blur", function(){//when title input is defocused
           // }
           });
 
+          var questionCounter = 0;
+
 
           $("body").on("click", "#short-answer", function(){//append inner html of ruby form
             console.log("function");
-            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Short Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer" selected="selected">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
+            questionCounter +=1;
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes]['+questionCounter+'][question_order]" id="survey_questions_attributes_' + (questionCounter) + '_question_order\" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Short Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes]['+questionCounter+'][question_type]\" id="survey_questions_attributes_'+questionCounter+'_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer" selected="selected">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes]['+questionCounter+'][description]" id="survey_questions_attributes_'+questionCounter+'_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes]['+questionCounter+'][question_text]" id="survey_questions_attributes_'+questionCounter+'_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes]['+questionCounter+'][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes]['+questionCounter+'][required]" id="survey_questions_attributes_' + questionCounter + '_required" class="required-checkbox"></div></div>');
             $('.dropdown-input').val("Short Answer");
-
+            console.log(questionCounter);
             // $(this).next().html('<input class="short_answer_input" type="text">');
             // $(this).nextAll('input').show();
             // $(this).nextAll('h2').hide();
@@ -277,8 +280,10 @@ $(".title-input").on("blur", function(){//when title input is defocused
 
           $("body").on("click", "#long-answer", function(){//append inner html of ruby form
             console.log("function");
-            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Long Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer" selected="selected">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
+            questionCounter +=1;
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes]['+questionCounter+'][question_order]" id="survey_questions_attributes_'+questionCounter+'_question_order\" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Long Answer</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes]['+questionCounter+'][question_type]\" id="survey_questions_attributes_'+questionCounter+'_question_type" class="question-type-dropdown"><option value="Yes/No">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer" selected="selected">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes]['+questionCounter+'][description]" id="survey_questions_attributes_'+questionCounter+'_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes]['+questionCounter+'][question_text]" id="survey_questions_attributes_'+questionCounter+'_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes]['+questionCounter+'][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes]['+questionCounter+'][required]" id="survey_questions_attributes_'+questionCounter+'_required" class="required-checkbox"></div></div>');
             $('.dropdown-input').val("Short Answer");
+            console.log(questionCounter);
 
             // $(this).next().html('<input class="short_answer_input" type="text">');
             // $(this).nextAll('input').show();
@@ -288,8 +293,10 @@ $(".title-input").on("blur", function(){//when title input is defocused
 
           $("body").on("click", "#yes-no", function(){//append inner html of ruby form
             console.log("function");
-            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes][0][question_order]" id="survey_questions_attributes_0_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Yes or No</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes][0][question_type]" id="survey_questions_attributes_0_question_type" class="question-type-dropdown"><option value="Yes/No" selected="selected">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes][0][description]" id="survey_questions_attributes_0_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes][0][question_text]" id="survey_questions_attributes_0_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes][0][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes][0][required]" id="survey_questions_attributes_0_required" class="required-checkbox"></div></div>');
-            $('.dropdown-input').val("Short Answer");
+            questionCounter +=1;
+            $(".test2").append('<div class="test"><input placeholder="Question Order" type="number" name="survey[questions_attributes]['+questionCounter+'][question_order]" id="survey_questions_attributes_'+questionCounter+'_question_order" class="question-order-box" readonly><div class="question-container-right"><div class="question-type-label">Yes or No</div><i class="fa fa-times fa-lg"></i><select name="survey[questions_attributes]['+questionCounter+'][question_type]\" id="survey_questions_attributes_'+questionCounter+'_question_type" class="question-type-dropdown"><option value="Yes/No" selected="selected">Yes/No</option><option value="Short Answer">Short Answer</option><option value="Long Answer">Long Answer</option></select><textarea placeholder="Question Description" name="survey[questions_attributes]['+questionCounter+'][description]" id="survey_questions_attributes_'+questionCounter+'_description" class="question-description-textarea"></textarea><textarea placeholder="Enter your question" name="survey[questions_attributes]['+questionCounter+'][question_text]" id="survey_questions_attributes_'+questionCounter+'_question_text" class="question-textarea"></textarea>Required Question<input name="survey[questions_attributes]['+questionCounter+'][required]" type="hidden" value="0"><input type="checkbox" value="1" name="survey[questions_attributes]['+questionCounter+'][required]" id="survey_questions_attributes_'+questionCounter+'_required" class="required-checkbox"></div></div>');
+            $('.dropdown-input').val("Short A nswer");
+            console.log(questionCounter);
 
 
             // $(this).next().html('<input class="short_answer_input" type="text">');
@@ -364,6 +371,14 @@ $(".title-input").on("blur", function(){//when title input is defocused
   // });
 
 
+//-----------------------STYLING-FOR-SURVEYS-INDEX-DROPDOWN---------->
+
+
+$(".unpublished-header").on("click", function(){
+  $(".plus").toggleClass("display-none");
+  $(".minus").toggleClass("display-none");
+  $(".unpublished-header").nextAll("li").toggleClass("display-none");
+})
 
 
   // <-----------------------LANDING PAGE--------------------------->
@@ -409,9 +424,7 @@ $(".title-input").on("blur", function(){//when title input is defocused
   $(".exit").on('click', function() {
      $(".signModal").fadeOut("slow");
   })
-  $("body").on('click', function() {
-    $(this).fadeOut("slow");
-  })
+
   // $(".Nter").on('click', function() {
   //    $(".signModal").fadeIn("slow");
   // })
