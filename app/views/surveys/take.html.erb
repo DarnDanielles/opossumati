@@ -3,6 +3,6 @@
 <%= render 'take_form' %>
 
 <% if session[:user_id] %>
-  Here is your link to disseminate your survey: <%= link_to request.original_url  %>
+  Here is the link to disseminate your survey: <%= link_to request.original_url  %>
   <%= link_to 'Logout', logout_path, method: :delete %>
 <% end %>

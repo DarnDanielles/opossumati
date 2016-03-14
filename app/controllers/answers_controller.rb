@@ -33,7 +33,7 @@ class AnswersController < ApplicationController
       # byebug
 
     if @survey.update(answer_params)
-      redirect_to @survey, notice: 'Answer was successfully created.'
+      redirect_to @survey, notice: 'Answers were successfully created.'
     else
       redirect_to :back, notice: 'Please answer all required questions!'
     end

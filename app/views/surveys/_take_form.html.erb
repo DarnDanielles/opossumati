@@ -32,9 +32,9 @@
         <%= fff.hidden_field :taker_id, :value => session[:id] %>
         <% if ff.object.question_type == 'Yes/No' %>
           <%= fff.radio_button(:response, "Yes") %>
-          <%= fff.label(:response_yes, "Yes") %>
+          <%= fff.label(:response, "Yes") %>
           <%= fff.radio_button(:response, "No") %>
-          <%= fff.label(:response_no, "No") %>
+          <%= fff.label(:response, "No") %>
         <% elsif ff.object.question_type == 'Short Answer' %>
           <% fff.label :response %>
           <%= fff.text_field :response %>
