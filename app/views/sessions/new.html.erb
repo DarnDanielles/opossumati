@@ -12,7 +12,7 @@
         <div class= "topWrap">
         <div class= "nQuery"><span id="N">N</span><span id="Q">Q</span>uery</div>
             <div class= "fancyLogin">
-              <div class= "user">login</div>
+              <div class= "user">login<%= form_tag(login_path) do %><%= submit_tag "Log in" %><% end %></div>
               </div>
               <div class="land">
               </div>
