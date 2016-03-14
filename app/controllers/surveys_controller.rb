@@ -1,6 +1,8 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :take]
   before_action :logged_in?, except: [:show, :take]
+
+
   before_action :survey_taken?, only: [:edit]
 
 
@@ -74,6 +76,7 @@ class SurveysController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
         questions_attributes: [:id, :question_order, :question_type, :description, :question_text, :required,
