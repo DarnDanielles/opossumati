@@ -1,417 +1,512 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// body {
-//   box-sizing: border-box;
-//   font-family: Anton, sans-serif;
-//   position: relative;
-//   height: 1200px;
-// }
-//
-//   /*removes highlight from href*/
-//   a {
-//       text-decoration: none !important;
-//   }
-//
-// /*<------------HEADER--------->*/
-// h1 {
-//   width: 100%;
-//   height: 100px;
-//   border: 4px solid rgb(200,200,200);
-//   background-color: rgb(230,230,230);
-//   display: inline-block;
-// }
-// .topWrap {
-//   border: 1px solid rgb(244,244,244);
-//   font-family: Anton, sans-serif;
-// }
-// .nQuery {
-//   margin-top: 15px;
-//   margin-left: 2%;
-//   height: 200px;
-//   font-size: 60px;
-//   float: left;
-//   cursor: pointer;
-// }
-// #N {
-//   color: rgb(30,144,255);
-// }
-//
-// .fancyLogin {
-//   border: 2px solid rgb(44, 50, 60);
-//   background-color: rgb(30,144,255);
-//   float: right;
-//   height: 96px;
-//   width: 200px;
-//   text-align: center;
-//   cursor: pointer;
-// }
-//
-// .user {
-//   font-size: 30px;
-//   margin-top: 40px;
-//   margin-right: 2%;
-//   color: rgb(230,230,230);
-//   cursor: pointer;
-// }
-//
-// /*the login username and password fields*/
-// .fancyField {
-//   border: 2px solid rgb(44, 50, 60);
-//   background-color:rgba(75, 92, 103, 1);
-//   float: right;
-//   height: 96px;
-//   width: 200px;
-//   text-align: center;
-//   color: rgb(230,230,230);
-//   z-index: 14;
-// }
-//
-// /*sticks the u and p together*/
+
+
+body {
+  box-sizing: border-box;
+  font-family: Anton, sans-serif;
+  position: relative;
+  height: 850px;
+}
+
+  /*removes highlight from href*/
+  a {
+      text-decoration: none !important;
+  }
+
+/*<------------HEADER--------->*/
+.head1 {
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgb(200,200,200);
+  background-color: rgb(230,230,230);
+  display: inline-block;
+}
+.topWrap {
+  border: 1px solid rgb(244,244,244);
+  font-family: Anton, sans-serif;
+}
+.nQuery {
+  margin-top: 15px;
+  margin-left: 2%;
+  height: 200px;
+  font-size: 60px;
+  float: left;
+  cursor: pointer;
+}
+#N {
+  color: rgb(30,144,255);
+}
+
+.fancyLogin1 {
+  border: 2px solid rgb(44, 50, 60);
+  background-color: rgb(30,144,255);
+  float: right;
+  height: 96px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-family: Anton, sans-serif;
+  font-size: 30px;
+  color: rgb(230,230,230);
+}
+
+.fancyLogin2 {
+  border: 3px solid rgb(44, 50, 60);
+  background-color: rgb(30,144,255);
+  float: right;
+  height: 100px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  font-family: Anton, sans-serif;
+  font-size: 30px;
+  color: rgb(230,230,230);
+}
+
+.fancyLogin3 {
+  border: 3px solid rgb(44, 50, 60);
+  background-color: rgb(30,144,255);
+  float: right;
+  height: 94px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  font-family: Anton, sans-serif;
+  font-size: 30px;
+  color: rgb(230,230,230);
+}
+
+.remove-font {
+  display: none;
+}
+
+.user {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-right: 2%;
+  color: rgb(230,230,230);
+  cursor: pointer;
+}
+
+/*the login username and password fields*/
+.fancyField {
+  border: 3px solid rgb(44, 50, 60);
+  background-color:rgba(75, 92, 103, 1);
+  float: right;
+  height: 96px;
+  width: 198px;
+  text-align: center;
+  color: rgb(230,230,230);
+  z-index: 14;
+}
+
+.uglyBlock {
+  display: inline-block;
+}
+
+.notFancyButton {
+  font-family: Anton, sans-serif;
+  font-size: 30px;
+}
+.nfb {
+  margin-top: -5px;
+  width: 100%;
+  height: 100px;
+}
+
+#ee {
+  font-size: 20px;
+  margin-top: .2em;
+}
+#pp {
+  margin-top: .2em;
+  font-size: 20px;
+}
+/*sticks the u and p together*/
 // .enterUp {
 //   display: inline-block;
+//
 // }
-//
-// /*the two id's below stle the letters U and P*/
-// #enterU {
-//  /*margin-right: 190px;*/
-//  margin-top: .2em;
-//  margin-right: .5em;
-//  font-size: 26px;
-// }
-//
-// #enterP {
-//   /*margin-right: 190px;*/
-//   margin-top: .5em;
-//   margin-right: .5em;
-//   font-size: 26px;
-// }
-// /*<-------------header---------->*/
-//
-//
-// /*NTERESTED*/
-//
-// .Nter {
-//   float: right;
-//   margin-right: 18%;
-//   margin-top: 4em;
-//   height: 150px;
-//   width: 300px;
-//   text-align: center;
-//   box-sizing: border-box;
-//   font-family: Anton, sans-serif;
-//   cursor:pointer;
-// }
-//
-// .blue {
-//   color: rgb(0,115,240);
-// }
-//
-// .blueCon {
-//   color: rgb(0, 115, 177);
-// }
-//
-// .bluer {
-//   background-color: rgb(0, 115, 177);
-// }
-//
-//
-// /*<--------VISION AND DESCRIPTION--------->*/
-//
-// .vision {
-//   font-size: 30px;
-//   width: 60%;
-//   padding-bottom: 1em;
-//   text-align: center;
-//   float: left;
-//   margin-left: 20%;
-//   margin-top: 2em;
-//   border-bottom: 4px solid rgb(30,144,255);
-// }
-//
-// .diVision {
-//   display: none;
-// }
-//
-// .disVision {
-//   box-sizing: border-box;
-//   margin-top: 20em;
-//   margin-left: 20%;
-//   width: 60%;
-//   font-size: 20px;
-//   border-top: 4px solid rgb(30,144,255);
-//   clear: both;
-// }
-//
-// .visDiv {
-//   margin-top: 1em;
-// }
-//
-// .edit1 {
-//   font-family: Anton, sans-serif;
-//   margin-left: 40%;
-// }
-// .edit2 {
-//   font-family: Droid Sans, Helvetica, sans-serif;
-// }
-// .edit3 {
-//   font-family: Anton, sans-serif;
-//   margin-left: 33%
-// }
-// .edit4 {
-//   font-family: Droid Sans, Helvetica, sans-serif;
-// }
-//
-//
-// /*<----------VISION AND DESCRIPTION--------->*/
-//
-//
-// .querious {
-//   text-align: center;
-//   font-family: Anton, sans-serif;
-//   font-size: 80px;
-//   float: left;
-//   margin-top: 1em;
-//   margin-left: 2%;
-//   border: 4px solid rgb(30,144,255);
-//   width: 400px;
-//   padding-bottom: 20px;
-// }
-// .Nquerious {
-//   text-align: center;
-//   font-family: Anton, sans-serif;
-//   font-size: 60px;
-//   float: left;
-//   margin-top: 1em;
-//   margin-left: 34%;
-//   cursor: pointer;
-//   width: 400px;
-//   padding-bottom: 20px;
-// }
-// #Nterested {
-//   font-size: 60px;
-//   margin-right: 6%;
-// }
-//
-// .surveys {
-//   width: 50%;
-//   height: 40px;
-//   margin-top: 10px;
-//   border-radius: 0px 13px 13px 0px; // top left, top right
-//   display: inline-block;
-//   cursor: crosshair;
-//   border-left: none;
-//   font-size: 32px;
-// }
-//
-// .bCol {
-//   border-color: black;
-// }
-//
-// .fa-pencil {
-//   font-size: 2em;
-//   z-index: 10;
-//   margin-left: -25px;
-// }
-//
-// .write {
-//   display: none;
-// }
-//
-// /*<----------sign up modal-------------->*/
-//
-// .signModal {
-//   height: 840px;
-//   width: 100%;
-//   background-color: white;
-//   /*background-color: rgba(40, 40, 40, .05);*/
-//   border: 1px solid white;
-//   color: black;
-//   z-index: 12;
-//   position: absolute;
-//   padding-bottom: 2em;
-// }
-//
-// /*pops modal to bottom of page*/
-// .signModal {
-//   display: inline-block;
-//   display: none;
-// }
-//
-//
-// /*the sign up button*/
-// #signUp {
-//   border-radius: 1em 1em 1em 1em;
-//   display: inline-block;
-//   width: 200px;
-//   height: 50px;
-//   margin-top: 5px;
-//   margin-right: 1em;
-//   margin-bottom: 300px;
-//   border-radius: 1em 1em 1em 1em;
-//   border: 3px solid rgb(0, 115, 177);
-//   background-color: rgb(30,144,255);
-//   color: rgb(230,230,230);
-//   font-size: 40px;
-//   font-family: Anton, sans-serif;
-//   text-align: center;
-//   float: right;
-// }
-//
-// /*Nterested / sign-up background*/
-// .mInputField {
-//   border: 1px solid rgba(0, 194, 75, 1);
-//   border-radius: 1.5em 1.5em 1.5em 1.5em;
-//   font-size: 50px;
-//   width: 66%;
-//   height: 520px;
-//   background-color: rgba(75, 92, 103, 1);
-//   margin-top: 1.32em;
-//   margin-left: 16.3%;
-//   opacity: none;
-//   z-index: 12;
-//   position: absolute;
-// }
-//
-// /*name password email*/
-// .mInput {
-//   color: rgb(230,230,230);
-//   width: 40%;
-//   margin-top: .6em;
-//   margin-left: 1em;
-// }
-//
-// /*the sign up button text*/
-// .sU {
-//   margin-top: 4px;
-// }
-// /*the x icon upper right*/
-// .exit {
-//   margin-right: 1em;
-//   margin-top: .5em;
-//   float: right;
-//   color: white;
-// }
-//
-// /*styles the input boxes*/
-// .joinM {
-//   font-size: 28px;
-//   height: 40px;
-//   width: 62%;
-//   margin-left: 2em;
-//   border-radius: 1em 1em 1em 1em;
-// }
-//
-// .logM {
-//   height: 20px;
-//   margin-bottom: .5em;
-// }
-// /*<-----sign up modal------->*/
-//
-//
-//
-//
-// /*<-------Footer------->*/
-//
-// /*footer background*/
-// .footsy {
-//   color: white;
-//   background-color: rgb(75, 92, 103);
-//   font-size: 20px;
-//   padding-top: 40px;
-//   border-style: solid;
-//   height: 50px;
-//   width: 100%;
-//   position: fixed;
-//   bottom: 0;
-//   left:0;
-//   opacity: .8;
-//   display: inline-block;
-//   z-index: 20;
-// }
-//
-// /*positions the icons*/
-// .footRefs {
-//   display: inline-block;
-//   margin-left: 3em;
-// }
-// /*positions all icons right*/
-// .iconWrap {
-//   box-sizing: border-box;
-//   float: right;
-//   width: 350px;
-//   padding-bottom: .5em;
-//   /*margin-left: 40%;*/
-// }
-//
-// .icon{
-//   margin-left: 2em;
-//   cursor: pointer;
-// }
-//
-// #contact {
-//   font-size: 20px;
-//   margin-left: 3em;
-//   padding-bottom: .5em;
-//   font-family: Anton, sans-serif;
-//   cursor: pointer;
-// }
-//
-// #iN {
-//   font-size: 90px;
-// }
-//
-// #iQ {
-//   font-size: 90px;
-// }
-//
-//
-// /*<------EDIT PAGE--------->*/
-//
-// .savedModal {
-//     border: 4px solid black;
-//     border-radius: 1.5em 1.5em 1.5em 1.5em;
-//     font-size: 50px;
-//     width: 66%;
-//     height: 520px;
-//     background-color: rgba(75, 92, 103, 1);
-//     margin-top: 24px;
-//     margin-left: 16.3%;
-//     opacity: none;
-//     z-index: 14;
-//     position: absolute;
-//     font-family: Anton, sans-serif;
-// }
-//
-// .saved {
-//   font-size: 100px;
-//   margin-top: .6em;
-//   margin-left: 35%;
-//   color: rgb(30,144,255);
-//   border-radius: 1.5em 1.5em 1.5em 1.5em;
-// }
-// .keepWorking {
-//   text-align: center;
-//   /*margin-left: 32%;*/
-//   margin-top: 1em;
-//   margin-left: 20%;
-//   margin-bottom: .5em;
-//   border-top: 1px solid black;
-//   border-bottom: 14px solid rgb(30,144,255);
-//   width: 60%;
-//   padding-bottom: .5em;
-//   padding-top: .5em;
-//   border-radius: 1.5em 1.5em 1.5em 1.5em;
-// }
-// .done {
-//   text-align: center;
-//   /*margin-left: 43%;*/
-//   margin-top: 1em;
-//   margin-left: 20%;
-//   border-top: 1px solid black;
-//   border-bottom: 14px solid rgb(30,144,255);
-//   width: 60%;
-//   padding-bottom: .5em;
-//   padding-top: .5em;
-//   border-radius: 1.5em 1.5em 1.5em 1.5em;
-// }
+
+/*the two id's below stle the letters U and P*/
+#enterU {
+  margin-top: .2em;
+ font-size: 26px;
+ display: inline-block;
+}
+.inline-up {
+  display: inline-block;
+}
+
+#U {
+  margin-top: 1em;
+}
+
+#enterP {
+  margin-top: .2em;
+  display: inline-block;
+  font-size: 26px;
+
+}
+/*<-------------header---------->*/
+
+
+/*NTERESTED*/
+
+.Nter {
+  float: right;
+  margin-right: 18%;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  height: 150px;
+  width: 300px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: Anton, sans-serif;
+  cursor:pointer;
+}
+
+.blue {
+  color: rgb(0,115,240);
+}
+
+.blueCon {
+  color: rgb(0, 115, 177);
+}
+
+.bluer {
+  background-color: rgb(0, 115, 177);
+}
+
+
+/*<--------VISION AND DESCRIPTION--------->*/
+
+.vision {
+  font-size: 30px;
+  width: 60%;
+  padding-bottom: 1em;
+  text-align: center;
+  float: left;
+  margin-left: 20%;
+  margin-top: 2em;
+  border-bottom: 4px solid rgb(30,144,255);
+}
+
+.we-do-this {
+  list-style:square;
+  margin-left: 1em;
+}
+
+.diVision {
+  display: none;
+}
+
+.disVision {
+  box-sizing: border-box;
+  margin-top: 20em;
+  margin-left: 20%;
+  width: 60%;
+  font-size: 20px;
+  border-top: 4px solid rgb(30,144,255);
+  clear: both;
+}
+
+.visDiv {
+  margin-top: 1em;
+}
+
+.edit1 {
+  font-family: Anton, sans-serif;
+  margin-left: 40%;
+}
+.edit2 {
+  font-family: Droid Sans, Helvetica, sans-serif;
+}
+.edit3 {
+  font-family: Anton, sans-serif;
+  margin-left: 33%
+}
+.edit4 {
+  font-family: Droid Sans, Helvetica, sans-serif;
+}
+
+
+/*<----------VISION AND DESCRIPTION--------->*/
+
+
+.querious {
+  text-align: center;
+  font-family: Anton, sans-serif;
+  font-size: 80px;
+  width: 100%;
+  // float: left;
+  margin-top: 1em;
+  // margin-left: 2%;
+  border: 4px solid rgb(30,144,255);
+  // width: 400px;
+  padding-bottom: 20px;
+}
+.Nquerious {
+  text-align: center;
+  font-family: Anton, sans-serif;
+  font-size: 60px;
+  float: left;
+  margin-top: 1em;
+  margin-left: 34%;
+  cursor: pointer;
+  width: 400px;
+  padding-bottom: 20px;
+}
+#Nterested {
+  font-size: 60px;
+  margin-right: 6%;
+}
+
+.surveys {
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 0px 13px 13px 0px; // top left, top right
+  display: inline-block;
+  cursor: crosshair;
+  border-left: none;
+  font-size: 32px;
+}
+
+.bCol {
+  border-color: black;
+}
+
+.fa-pencil {
+  font-size: 2em;
+  z-index: 10;
+  margin-left: -25px;
+}
+
+.write {
+  display: none;
+}
+
+/*<----------sign up modal-------------->*/
+
+.signModal {
+  height: 840px;
+  width: 100%;
+  background-color: white;
+  /*background-color: rgba(40, 40, 40, .05);*/
+  border: 1px solid white;
+  color: black;
+  z-index: 10;
+  position: absolute;
+  padding-bottom: 2em;
+}
+
+/*pops modal to bottom of page*/
+.signModal {
+  display: inline-block;
+  display: none;
+}
+
+
+/*the sign up button*/
+.signUp {
+  border-radius: 1em 1em 1em 1em;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  margin-top: 5px;
+  margin-right: 2em;
+  margin-bottom: 300px;
+  border-radius: 1em 1em 1em 1em;
+  border: 3px solid rgb(0, 115, 177);
+  background-color: rgb(30,144,255);
+  color: rgb(230,230,230);
+  font-size: 20px;
+  font-family: Anton, sans-serif;
+  text-align: center;
+  float: right;
+}
+
+/*Nterested / sign-up background*/
+.mInputField {
+  border: 1px solid rgba(0, 194, 75, 1);
+  border-radius: 1.5em 1.5em 1.5em 1.5em;
+  font-size: 50px;
+  width: 66%;
+  height: 520px;
+  background-color: rgba(75, 92, 103, 1);
+  margin-top: 1.32em;
+  margin-left: 16.3%;
+  opacity: none;
+  z-index: 12;
+  position: absolute;
+}
+
+.signAlign {
+  display: inline-block;
+}
+
+// name password email
+ .mInput {
+   color: rgb(230,230,230);
+   width: 60%;
+   margin-top: .8em;
+   margin-left: 1em;
+   font-family: Anton, sans-serif;
+   display: block;
+
+
+ }
+
+.joinM {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  float: left;
+  width: 100% !important;
+}
+
+/*the sign up button text*/
+.sU {
+  margin-top: 4px;
+}
+/*the x icon upper right*/
+.exit {
+  margin-right: 1em;
+  margin-top: .5em;
+  float: right;
+  color: white !important;
+}
+
+/*styles the input boxes*/
+
+.logM {
+  height: 20px;
+  margin-bottom: .5em;
+  background-color: white;
+}
+/*<-----sign up modal------->*/
+
+
+
+
+/*<-------Footer------->*/
+
+/*footer background*/
+.footsy {
+  color: white;
+  background-color: rgb(75, 92, 103);
+  font-size: 20px;
+  padding-top: 40px;
+  border-style: solid;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  opacity: .8;
+  display: inline-block;
+  z-index: 20;
+}
+
+/*positions the icons*/
+.footRefs {
+  display: inline-block;
+  margin-left: 3em;
+}
+/*positions all icons right*/
+.iconWrap {
+  box-sizing: border-box;
+  float: right;
+  width: 350px;
+  padding-bottom: .5em;
+  /*margin-left: 40%;*/
+}
+
+.icon{
+  margin-left: 2em;
+  cursor: pointer;
+}
+
+#contact {
+  font-size: 20px;
+  margin-left: 3em;
+  padding-bottom: .5em;
+  font-family: Anton, sans-serif;
+  cursor: pointer;
+  float: left;
+}
+
+.homies {
+  background-color:rgba(75, 92, 103, 1);
+  float: left;
+  width: 400px;
+  text-align: center;
+  color: rgb(30,144,255) !important;
+}
+
+.nameSpace {
+  color: rgb(30,144,255) !important;
+  margin-left: .5em;
+  font-family: Anton, sans-serif;
+}
+
+#iN {
+  font-size: 90px;
+}
+
+#iQ {
+  font-size: 90px;
+}
+
+
+/*<------EDIT PAGE--------->*/
+
+.savedModal {
+    border: 4px solid black;
+    border-radius: 1.5em 1.5em 1.5em 1.5em;
+    font-size: 50px;
+    width: 66%;
+    height: 520px;
+    background-color: rgba(75, 92, 103, 1);
+    margin-top: 24px;
+    margin-left: 16.3%;
+    opacity: none;
+    z-index: 14;
+    position: absolute;
+    font-family: Anton, sans-serif;
+}
+
+.saved {
+  font-size: 100px;
+  margin-top: .6em;
+  margin-left: 35%;
+  color: rgb(30,144,255);
+  border-radius: 1.5em 1.5em 1.5em 1.5em;
+}
+.keepWorking {
+  text-align: center;
+  /*margin-left: 32%;*/
+  margin-top: 1em;
+  margin-left: 20%;
+  margin-bottom: .5em;
+  border-top: 1px solid black;
+  border-bottom: 14px solid rgb(30,144,255);
+  width: 60%;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  border-radius: 1.5em 1.5em 1.5em 1.5em;
+}
+.done {
+  text-align: center;
+  /*margin-left: 43%;*/
+  margin-top: 1em;
+  margin-left: 20%;
+  border-top: 1px solid black;
+  border-bottom: 14px solid rgb(30,144,255);
+  width: 60%;
+  padding-bottom: .5em;
+  padding-top: .5em;
+  border-radius: 1.5em 1.5em 1.5em 1.5em;
+}
