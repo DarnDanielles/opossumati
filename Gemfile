@@ -37,7 +37,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rails-footnotes'
   gem 'sqlite3'
-
 end
 
 group :development do
