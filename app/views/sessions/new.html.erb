@@ -12,16 +12,25 @@
       <div class ="head1">
         <div class= "topWrap">
         <div class= "nQuery"><span id="N">N</span><span id="Q">Q</span>uery</div>
-            <div class= "fancyLogin1">
+        <%= form_tag(login_path) do %>
+              <div class="fancyLogin3">
+                <div class="notFancyLogin">
+          <div class="uglyBlock">  <div id="ee">Email</div><%= email_field_tag :email, nil, class:"logM ugly" %> </div>
+          <div class="uglyBlock">  <div id="pp">Password</div><%= password_field_tag :password, nil, class:"logM ugly" %> </div>
+               <div class="notFancyButton" > <%= submit_tag "Log in", class:"nfb"  %></div>
+               </div>
+             </div>
+             <% end %>
+            <!-- <div class= "fancyLogin1">
               <div class= "user">login</div>
               </div>
               <div class="land">
-              </div>
+              </div> -->
         </div>
+
       </div>
 
       <body>
-
 
             <div class= "vision">
               We don't have all the answers, we'll help you get them.
