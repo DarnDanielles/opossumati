@@ -4,7 +4,7 @@ class Answer < ActiveRecord::Base
 
   validates :response, presence: true, if: :required?
 
- def required?
-   question.required
- end
+  def required?
+    question.required
+  end
 end

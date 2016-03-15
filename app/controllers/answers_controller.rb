@@ -2,7 +2,8 @@ require 'byebug'
 
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in?
+  before_action :logged_in?, except: [:create]
+
 
   # GET /answers
   # GET /answers.json
@@ -31,10 +32,14 @@ class AnswersController < ApplicationController
     @survey = Survey.find(answer_params[:id])
       # byebug
 
-    if @survey.update(answer_params)
-      redirect_to @survey, notice: 'Answer was successfully created.'
+    if @survey.update(survey_params)
+      redirect_to @survey, notice: 'Answers were successfully created.'
     else
+<<<<<<< HEAD
       render :new
+=======
+      redirect_to :back, notice: 'Please answer all required questions!'
+>>>>>>> 85a14cf678a61248fe2880a4c1075c69db03b9ce
     end
   end
 
@@ -65,6 +70,12 @@ class AnswersController < ApplicationController
     def answer_params
       params.require(:survey).permit(:id,
         questions_attributes: [:id,
+          answers_attributes: [:question_id, :taker_id, :response]])
+    end
+
+    def survey_params
+      params.require(:survey).permit(:author_id, :title, :description,
+        questions_attributes: [:id, :question_order, :question_type, :description, :question_text, :required,
           answers_attributes: [:question_id, :taker_id, :response]])
     end
 end
