@@ -8,4 +8,6 @@ class Survey < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions,
       reject_if: :all_blank
+
+  accepts_nested_attributes_for :takers
 end
