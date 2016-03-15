@@ -368,15 +368,16 @@ $(".title-input").on("blur", function(){//when title input is defocused
 
 // <-----------------------LANDING PAGE--------------------------->
 
+
 //login slide\
 var maxAppend = 0;
-$('.fancyLogin').on('click', function(){
+$('.fancyLogin1').on('click', function(){
   if (maxAppend >= 1) return;
-  $(".land").append('<div class="fancyField"><div class="enterUp" id="enterU">U</div><input type="text" name="name" class="logM"><br><div class="enterUp" id="enterP">P</div><input type="text" name="name" class="logM"></div>');
+  $(".land").append('<div class="fancyField"><form action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="6o6dZ5/FHmHXMpM03B2Zuy/PsCM/bx++4qPSOxeZsbet+dVBXBQWUcq13HOge5B1WR2wciHenumeOUKsKCJjew=="><div class="enterUp" id="enterU">U <input type="email" name="email" id="email" class="logM"><div class="enterUp" id="enterP">P <input type="password" name="password" id="password" class="logM"></div></form></div>');
   maxAppend++;
-
-  $('.fancyLogin').addClass("bluer");
-
+  $('.fancyLogin1').append('<form action="/login" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="o/pKaLpg0UKM0QYLo6kOmhxMXK2vi4CyhUK+3/qoRWfkjQJOebHZcpFWSUzfzwdUap5c/LE6AeX52C5IxROXqw=="><input type="submit" name="commit" value="login" class="fancyLogin2"></form>');
+  $('.user').addClass("remove-font");
+  $('.fancyLogin2').addClass("bluer");
 });
 
 //Changes background of login
@@ -419,7 +420,14 @@ $(".Nter").on('click', function() {
 $(".exit").on('click', function() {
    $(".signModal").fadeOut("slow");
 })
-// $("body").on('click', function() {
+
+//contacts
+$(".homies").hide();
+$("#contact").on('click', function() {
+  $(".homieShow").fadeIn("slow");
+}
+)
+// $(".signModal").on('click', function() {
 //   $(this).fadeOut("slow");
 // })
 
