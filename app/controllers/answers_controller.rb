@@ -2,9 +2,7 @@ require 'byebug'
 
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
-
   before_action :logged_in?, except: [:create]
-
 
 
   # GET /answers
@@ -37,11 +35,7 @@ class AnswersController < ApplicationController
     if @survey.update(survey_params)
       redirect_to @survey, notice: 'Answers were successfully created.'
     else
-<<<<<<< HEAD
-      render :new
-=======
       redirect_to :back, notice: 'Please answer all required questions!'
->>>>>>> 85a14cf678a61248fe2880a4c1075c69db03b9ce
     end
   end
 
