@@ -15,10 +15,6 @@
   <div class="main-section-head">
 
     <div class="main-section-head-right">
-      <button class="publish" id="publish">
-        Publish
-        <i class="fa fa-external-link fa-lg"></i>
-      </button>
       <button class="save publish" id="save">
         Save
         <i class="fa fa-floppy-o fa-lg"></i>
@@ -44,30 +40,33 @@
 
 
     </div>
-
-
-  <%= f.hidden_field :author_id %>
-
-
-
+  </div>
   <h3 class="survey-questions-header">Questions</h3>
-  <div class='test'>
-  <%= f.fields_for :questions do |ff| %>
-      <%= ff.number_field :question_order, placeholder: 'Question Order' %>
-      Question Type<%= ff.select :question_type, ['Yes/No', 'Short Answer', 'Long Answer'], :selected => 'Short Answer', class: 'dropdown-input'%>
-      <%= ff.text_area :description, placeholder: 'Question Description' %>
-      <%= ff.text_area :question_text, placeholder: 'Enter your question' %>
-      Required Question<%= ff.check_box :required,class: 'required-checkbox' %>
-    <% end %>
-</div>
-    <div class="test2"></div>
 
+    <%= f.fields_for :questions do |ff| %>
+    <div class='test'>
+        <%= ff.number_field :question_order, placeholder: 'Question Order', class: "question-order-box" %>
+        <div class="question-container-right">
+          <div class="question-type-label">
+            Short Answer
+            </div>
+            <i class="fa fa-times fa-lg"></i>
+
+        <%= ff.text_area :description, placeholder: 'Question Description', class: 'question-description-textarea' %>
+        <%= ff.text_area :question_text, placeholder: 'Enter your question', class: 'question-textarea' %>
+        Required Question<%= ff.check_box :required, class: 'required-checkbox' %>
+      </div>
+    </div>
+    <% end %>
+    <div class="test2"></div>
+  <%= f.hidden_field :author_id %>
 
 
   <div class="actions">
     <%= f.submit "Save Question" %>
   </div>
-<% end %>
 
 <%= link_to 'Logout', logout_path, method: :delete %>
 <%= link_to 'Back', surveys_path %>
+</div>
+<% end %>

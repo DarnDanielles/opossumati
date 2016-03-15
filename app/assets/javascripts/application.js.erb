@@ -320,7 +320,10 @@ $(".title-input").on("blur", function(){//when title input is defocused
             console.log("nice");
           });
         });
-
+          $(".question-order-box").each(function(index){
+            $(this).val(index + 1);
+            console.log("nice");
+          });
 
 
 

@@ -43,109 +43,34 @@
     </span>
     <%= render 'form' %>
 
-    <!-- <div class="main-section-head">
-
-
-      <div class="main-section-head-left">
-        <h1>Dog Survey</h1>
-        <button class="edit">
-          <div class="edit-text">edit</div>
-          <i class="fa fa-pencil-square-o fa-lg"></i>
-        </button>
-      </div>
-
-      <div class="main-section-head-right">
-        <button class="publish">
-          Publish
-          <i class="fa fa-external-link fa-lg"></i>
-        </button>
-        <button class="save publish">
-          Save
-          <i class="fa fa-floppy-o fa-lg"></i>
-        </button>
-      </div>
-
-    </div> -->
-
      <div class="main-section-container" id="main-section-container">
 
-     <!-- <div class="divtr" id="presUser_1">
-      <div class="short-answer">
-        <div class="short-answer-one">
-          1
-        </div>
-     <div class="short-answer-two">
-            <span>
-              <h3>Short Answer Question</h3>
-              <div class="short_answer_display-edit display-none">
-                edit
-                <i class="fa fa-pencil-square-o"></i>
-              </div>
-              <h2 class="short_answer_display">
-              </h2>
 
-              <input class="short_answer_input" type="text" name="lastname">
-            </span>
-          </div>
-          <button class="delete" title="Delete this" onClick="userController.removeUsersForm('presUser_1');">
-              <i class="fa fa-times fa-lg"></i>
-          </button>
-        </div>
-        </div> -->
-
-
-
-        <!-- <div class="divtr" id="presUser_1">
-        <div class="long-answer">
-          <div class="short-answer-one">
-            1
-          </div>
-        <div class="short-answer-two">
-          <h3>Short Answer Question</h3>
-              <span>
-                <div class="short_answer_display-edit display-none">
-                  edit
-                  <i class="fa fa-pencil-square-o"></i>
-                </div>
-                <h2 class="short_answer_display">
-                </h2>
-                <input class="short_answer_input" type="text" name="lastname">
-              </span>
-            </div>
-            <button class="delete" title="Delete this" onClick="userController.removeUsersForm('presUser_1');">
-                <i class="fa fa-times fa-lg"></i>
-            </button>
-          </div>
-          </div> -->
-
-
-        <!-- <div class="short-answer long-answer">
-          <div class="short-answer-one">
-            1
-          </div>
-
-        <div class="short-answer-two">
-              <h3>Short Answer Question</h3>
-              <span>
-                <h2></h2>
-                <input type="text" name="lastname">
-              </span>
-            </div>
-            <button class="edit">
-              <div class="edit-text">edit</div>
-              <i class="fa fa-pencil-square-o fa-lg"></i>
-            </button>
-          </div> -->
           <%= link_to 'Back', surveys_path %>
 
     </div>
 
-  </div><!--
+  </div>
+  <aside>
+        <div class="aside-container">
+          <h2>Add a question</h2>
 
--->
-
-
-
+            <button title="Add" id="short-answer">
+              <!-- THIS WENT ON THE ABOVE BUTTON TAG TO MAKE THE FIRST QUESTION HTML APPEND WORK WITH THE CONSTRUCTOR FUNCTION -->
+              <!-- onClick="userController.addUsersForm();" -->
+              <h3><i class="fa fa-plus"></i>Short Answer</h3>
+            </button>
+            <button id="long-answer">
+              <h3><i class="fa fa-plus"></i>Long Answer</h3>
+            </button>
+            <!-- <button class="multiple-choice">
+              <h3><i class="fa fa-plus"></i>Multiple Choice</h3>
+            </button> -->
+            <button class="yes-or-no" id="yes-no">
+              <h3><i class="fa fa-plus"></i>Yes or No</h3>
+            </button>
+        </div>
+    </aside>
 
 
 
@@ -155,26 +80,7 @@
 
 </div>
 
-<aside>
-      <div class="aside-container">
-        <h2>Add a question</h2>
 
-          <button title="Add" id="short-answer">
-            <!-- THIS WENT ON THE ABOVE BUTTON TAG TO MAKE THE FIRST QUESTION HTML APPEND WORK WITH THE CONSTRUCTOR FUNCTION -->
-            <!-- onClick="userController.addUsersForm();" -->
-            <h3><i class="fa fa-plus"></i>Short Answer</h3>
-          </button>
-          <button id="long-answer">
-            <h3><i class="fa fa-plus"></i>Long Answer</h3>
-          </button>
-          <!-- <button class="multiple-choice">
-            <h3><i class="fa fa-plus"></i>Multiple Choice</h3>
-          </button> -->
-          <button class="yes-or-no" id="yes-no">
-            <h3><i class="fa fa-plus"></i>Yes or No</h3>
-          </button>
-      </div>
-  </aside>
 
 </body>
 </html>

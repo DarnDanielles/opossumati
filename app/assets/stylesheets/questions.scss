@@ -10,7 +10,10 @@
 $width:100%;
 
 //----------------------------------------------MAIN--
+.container{
+  @include border();
 
+}
 .main-section{
   @include border();
   display: inline-block;
@@ -34,6 +37,7 @@ $width:100%;
 .main-section-head{
   border:none green thin;
   padding-bottom:2em;
+  @include border();
 
   .main-section-head-right{
     @include border();
@@ -52,7 +56,7 @@ $width:100%;
       color:white;
       font-weight:600;
       font-size:1em;
-      border:none
+      @include border();
     }
     .save{
       display: inline-block;
@@ -63,14 +67,20 @@ $width:100%;
     border:none blue thin;
     display: inline-block;
     width:100%;
+    @include border();
+
     .field{
       width:96%;
       display: inline-block;
       vertical-align: bottom;
       padding:0;
       margin:0;
+      @include border();
+
     .title-label{
       display:none;
+      @include border();
+
     }
     .title-input{
       width:100%;
@@ -128,6 +138,8 @@ $width:100%;
 .survey-questions-header{
   font-size:2em;
   font-weight: 600;
+  @include border();
+
 }
 .test{
   padding-top:1.5em;
@@ -143,6 +155,8 @@ $width:100%;
     margin-top:-.16em;
     margin-right:.25em;
     margin-left:-.25em;
+    @include border();
+
   }
   .question-order-box[type=number]::-webkit-inner-spin-button,
   .question-order-box[type=number]::-webkit-outer-spin-button {
@@ -225,6 +239,7 @@ $width:100%;
       padding:.25em .5em;
       padding-left:.4em;
       display: inline-block;
+      @include border();
 
     }
     .short_answer_display-edit{
@@ -274,7 +289,7 @@ $width:100%;
   border:none;
 }
 
-aside{
+.aside-thing{
   @include border();
   display: inline-block;
   width:$width * 6/24;
@@ -287,10 +302,13 @@ aside{
     text-align: left;
     width:90%;
     margin:0 auto;
+    display:inline-block;
   h2{
     font-size:2em;
     font-weight: 500;
     padding-bottom:.5em;
+    @include border();
+
   }
   button {
     text-align: left;
@@ -301,6 +319,8 @@ aside{
     border-radius:2px;
     margin-bottom:.2em;
     background-color:white;
+    @include border();
+
     h3{
       font-size:1.5em;
       padding-left:.5em;
